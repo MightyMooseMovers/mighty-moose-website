@@ -6,6 +6,8 @@ The website for Mighty Moose Moving, London, Ontario.
 - `checklist.html`: the free moving checklist
 - `logo.webp`, `logo-sm.webp`, `favicon.png`, `apple-touch-icon.png`: logo and icons
 
+Live at https://inquisitive-ganache-6fdc72.netlify.app (Netlify project `inquisitive-ganache-6fdc72`).
+
 Netlify publishes this repository. Any change saved here goes live on the website within a minute or two.
 
 ## Changing prices
