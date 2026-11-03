@@ -1,0 +1,1216 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#17402F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mighty Moose Moving · London, Ontario">
+<meta property="og:description" content="Local movers in London, Ontario. Get a free moving price in about a minute.">
+<title>Mighty Moose Moving</title>
+<meta name="description" content="Local movers in London, Ontario. Get a free moving price in about a minute.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"MovingCompany","name":"Mighty Moose Moving","telephone":"+1-226-637-0481","address":{"@type":"PostalAddress","addressLocality":"London","addressRegion":"ON","addressCountry":"CA"},"areaServed":["London ON","St. Thomas ON","Strathroy ON","Komoka ON","Ilderton ON","Dorchester ON","Lucan ON","Belmont ON","Thorndale ON"],"paymentAccepted":"E-transfer, Credit Card, Cash"}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bowlby+One&display=swap">
+<style>
+/* Layout: a forest-green hero with the moose, a plaid band, then the price tool styled as a kraft moving-box label, followed by plain, big-type sections. */
+:root {
+  --bg: #F2F4EE;
+  --surface: #FFFFFF;
+  --ink: #15221B;
+  --muted: #4A5950;
+  --line: #CFD8CF;
+  --forest: #17402F;
+  --forest-ink: #FFF6E4;
+  --pine: #2B6A4B;
+  --pine-soft: #E3EEE6;
+  --maple: #C3202E;
+  --maple-dark: #9E1824; --maple-text: #C3202E;
+  --on-maple: #FFFFFF;
+  --kraft: #F0DDBB;
+  --kraft-edge: #C9975B;
+  --kraft-ink: #3A2A15;
+  --tape: rgba(255, 246, 228, 0.72);
+  --hero-far: #22533C;
+  --hero-near: #0F2E21;
+  --focus: #1D6FE0;
+  --error: #B51C29;
+  --check: rgba(0, 0, 0, 0.42);
+  --shadow: 0 18px 40px -22px rgba(23, 64, 47, 0.45);
+
+  --font-display: "Bowlby One", "Arial Black", "Helvetica Neue", Impact, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", Verdana, Arial, sans-serif;
+
+  --step-0: 1.125rem;   /* 18px body */
+  --step-1: 1.35rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2rem, 4.2vw, 3rem);
+  --step-4: clamp(2.4rem, 6vw, 4.25rem);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1813; --surface: #14231B; --ink: #EDF2EB; --muted: #A9B8AE; --line: #2B3F33;
+    --forest: #0C2318; --forest-ink: #FFF6E4; --pine: #6FC497; --pine-soft: #1B3326;
+    --maple: #D8333F; --maple-dark: #B0222D; --maple-text: #FF8088; --on-maple: #FFFFFF;
+    --kraft: #2C2318; --kraft-edge: #8F6A3D; --kraft-ink: #F3E4C6; --tape: rgba(240, 221, 187, 0.16);
+    --hero-far: #143424; --hero-near: #08180F; --focus: #7FB2FF; --error: #FF8A8F; --check: rgba(0, 0, 0, 0.5);
+    --shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1813; --surface: #14231B; --ink: #EDF2EB; --muted: #A9B8AE; --line: #2B3F33;
+  --forest: #0C2318; --forest-ink: #FFF6E4; --pine: #6FC497; --pine-soft: #1B3326;
+  --maple: #D8333F; --maple-dark: #B0222D; --maple-text: #FF8088; --on-maple: #FFFFFF;
+  --kraft: #2C2318; --kraft-edge: #8F6A3D; --kraft-ink: #F3E4C6; --tape: rgba(240, 221, 187, 0.16);
+  --hero-far: #143424; --hero-near: #08180F; --focus: #7FB2FF; --error: #FF8A8F; --check: rgba(0, 0, 0, 0.5);
+  --shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--step-0); line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.08; text-wrap: balance; margin: 0; letter-spacing: 0.005em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.95rem; }
+.lead { font-size: var(--step-1); max-width: 34ch; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 58px; padding: 0 26px; border-radius: 999px; border: 0;
+  font: 700 var(--step-0)/1.1 var(--font-body); text-decoration: none; cursor: pointer;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn-red { background: var(--maple); color: var(--on-maple); }
+.btn-red:hover { background: var(--maple-dark); }
+.btn-ghost { background: transparent; color: var(--forest-ink); box-shadow: inset 0 0 0 2px var(--forest-ink); }
+.btn-ghost:hover { background: rgba(255, 246, 228, 0.12); }
+.btn-forest { background: var(--forest); color: var(--forest-ink); }
+.btn-forest:hover { filter: brightness(1.15); }
+.btn-plain { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+.btn-plain:hover { box-shadow: inset 0 0 0 2px var(--pine); }
+
+/* Header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.brand img { width: 52px; height: auto; }
+.brand-name { font-family: var(--font-display); font-size: 1.25rem; line-height: 1; color: var(--ink); }
+.brand-name small { display: block; font-family: var(--font-body); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--maple-text); margin-top: 4px; }
+.header-call { min-height: 50px; padding: 0 18px; }
+.header-call .long { display: inline; }
+@media (max-width: 520px) { .brand-name { font-size: 1.05rem; } .header-call .long { display: none; } }
+
+/* Hero */
+.hero { background: var(--forest); color: var(--forest-ink); position: relative; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.7fr); gap: 32px; align-items: center; padding-block: 56px 132px; position: relative; z-index: 1; }
+.hero h1 { font-size: var(--step-4); }
+.hero h1 em { font-style: normal; color: #FFD99A; }
+.hero .eyebrow { color: #F6B3A4; margin-bottom: 14px; }
+.hero .lead { margin-top: 18px; opacity: 0.95; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 28px 0 0; padding: 0; list-style: none; font-weight: 700; }
+.hero-facts li { display: flex; align-items: center; gap: 8px; }
+.hero-facts svg { width: 20px; height: 20px; color: #FFD99A; flex: none; }
+.hero-logo { justify-self: center; width: min(290px, 100%); height: auto; filter: drop-shadow(0 18px 24px rgba(0,0,0,.35)); }
+.forest-line { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 150px; display: block; }
+.forest-line .far { fill: var(--hero-far); }
+.forest-line .near { fill: var(--hero-near); }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 28px 120px; gap: 8px; }
+  .hero-logo { order: -1; justify-self: start; width: 120px; margin-bottom: 10px; }
+}
+
+/* Buffalo plaid band, from the moose's shirt */
+.plaid { height: 20px; background:
+  repeating-linear-gradient(90deg, var(--check) 0 10px, transparent 10px 20px),
+  repeating-linear-gradient(0deg, var(--check) 0 10px, transparent 10px 20px),
+  var(--maple); }
+
+/* Section rhythm */
+section.band { padding-block: 72px; }
+section.band .wrap > header { display: grid; gap: 12px; margin-bottom: 36px; max-width: 760px; }
+section.band h2 { font-size: var(--step-3); }
+section.band header p { color: var(--muted); font-size: var(--step-1); }
+.alt { background: var(--surface); border-block: 1px solid var(--line); }
+
+/* Quote tool */
+.quote-grid { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 32px; align-items: start; }
+@media (max-width: 960px) { .quote-grid { grid-template-columns: 1fr; } }
+.questions { display: grid; gap: 22px; }
+fieldset.q { margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); min-width: 0; }
+.q legend { padding: 0; float: left; width: 100%; display: flex; gap: 14px; align-items: baseline; margin-bottom: 6px; }
+.q legend + * { clear: both; }
+.q-num { flex: none; display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--pine); color: var(--surface); font: 400 1.05rem/1 var(--font-display); transform: translateY(4px); }
+.q-title { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.15; }
+.q-hint { color: var(--muted); margin: 4px 0 16px 52px; }
+@media (max-width: 520px) { .q-hint { margin-left: 0; } fieldset.q { padding: 18px; } }
+.choices { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.choices.list { grid-template-columns: 1fr; }
+@media (max-width: 600px) { .choices { grid-template-columns: 1fr; } }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.choice label {
+  display: flex; align-items: center; gap: 14px; min-height: 72px; height: 100%;
+  padding: 14px 16px; border-radius: 12px; cursor: pointer;
+  border: 2px solid var(--line); background: var(--surface);
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.choice label:hover { border-color: var(--pine); }
+.choice input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.choice input:checked + label { border-color: var(--pine); background: var(--pine-soft); box-shadow: inset 0 0 0 1px var(--pine); }
+.choice .ico { flex: none; width: 46px; height: 40px; color: var(--pine); display: grid; place-items: center; }
+.choice .ico svg { width: 100%; height: 100%; }
+.choice .txt { display: grid; gap: 2px; min-width: 0; }
+.choice strong { font-size: 1.1rem; line-height: 1.2; }
+.choice .txt span { color: var(--muted); font-size: 0.98rem; line-height: 1.3; }
+.choice .tick { margin-left: auto; flex: none; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--line); display: grid; place-items: center; color: transparent; }
+.choice input[type="checkbox"] + label .tick { border-radius: 7px; }
+.choice input:checked + label .tick { background: var(--pine); border-color: var(--pine); color: var(--surface); }
+.choice .tick svg { width: 16px; height: 16px; }
+.rec { display: none; margin-left: 8px; padding: 2px 10px; border-radius: 999px; background: var(--forest); color: var(--forest-ink); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; vertical-align: 2px; white-space: nowrap; }
+.choice.is-rec .rec { display: inline-block; }
+.choice .txt .rec { color: var(--forest-ink); font-size: 0.8rem; line-height: 1.5; }
+.note { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--pine-soft); font-weight: 700; }
+
+.stepper { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 14px 16px; border: 2px solid var(--line); border-radius: 12px; margin-top: 12px; }
+.stepper .txt { display: grid; gap: 2px; min-width: 0; flex: 1 1 220px; }
+.stepper .txt span { color: var(--muted); font-size: 0.98rem; }
+.count { display: flex; align-items: center; gap: 10px; }
+.count button { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--pine); background: var(--surface); color: var(--pine); font: 700 1.6rem/1 var(--font-body); cursor: pointer; }
+.count button:disabled { opacity: .35; cursor: default; }
+.count output { min-width: 2ch; text-align: center; font: 400 1.6rem/1 var(--font-display); }
+
+/* Estimate card: a kraft box label */
+.estimate { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 92px); }
+@media (max-width: 960px) { .estimate { position: static; } }
+.label-card {
+  position: relative; background: var(--kraft); color: var(--kraft-ink);
+  border: 2px solid var(--kraft-edge); border-radius: 6px; padding: 34px 24px 24px; box-shadow: var(--shadow);
+}
+.label-card::before { /* packing tape */
+  content: ""; position: absolute; top: -14px; left: 50%; width: 150px; height: 30px; transform: translateX(-50%) rotate(-2deg);
+  background: var(--tape); border-left: 2px dashed rgba(0,0,0,.08); border-right: 2px dashed rgba(0,0,0,.08);
+}
+.label-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 3px solid currentColor; padding-bottom: 10px; }
+.label-top .eyebrow { font-size: 0.9rem; }
+.arrows { display: flex; gap: 4px; }
+.arrows svg { width: 18px; height: 22px; }
+.price { font: 400 clamp(2.2rem, 7vw, 2.9rem)/1.05 var(--font-display); margin: 18px 0 4px; font-variant-numeric: tabular-nums; }
+.price-sub { font-weight: 700; }
+.deposit { margin-top: 14px; padding: 12px 14px; border: 2px dashed currentColor; border-radius: 8px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-weight: 700; }
+.deposit .dep-pay { flex-basis: 100%; font-weight: 400; font-size: 0.98rem; }
+.included { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.included li { display: flex; gap: 10px; align-items: flex-start; }
+.included svg { flex: none; width: 20px; height: 20px; margin-top: 3px; }
+.fine { margin-top: 14px; font-size: 0.98rem; }
+.custom-msg { margin: 18px 0 4px; font: 400 var(--step-2)/1.15 var(--font-display); }
+.send { margin-top: 18px; padding-top: 18px; border-top: 3px solid currentColor; display: grid; gap: 12px; }
+.send h3 { font-size: 1.2rem; }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 700; }
+.field input { min-height: 52px; padding: 0 14px; border-radius: 10px; border: 2px solid var(--kraft-edge); background: var(--surface); color: var(--ink); font: 400 var(--step-0) var(--font-body); width: 100%; }
+.send .btn { width: 100%; }
+.phone-line { text-align: center; font-weight: 700; }
+.phone-line .big { display: block; font: 400 1.6rem/1.2 var(--font-display); user-select: all; }
+.copy-status { min-height: 1.5em; text-align: center; font-weight: 700; }
+.msg-box { width: 100%; min-height: 150px; border-radius: 10px; border: 2px solid var(--kraft-edge); background: var(--surface); color: var(--ink); font: 400 1rem/1.45 var(--font-body); padding: 10px; }
+details.show-msg summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
+
+/* Mobile price bar */
+.price-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--forest); color: var(--forest-ink);
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 -10px 30px -12px rgba(0,0,0,.5); }
+.price-bar strong { font: 400 1.3rem/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+.price-bar small { display: block; font-size: 0.85rem; opacity: .85; }
+.price-bar .btn { min-height: 50px; padding: 0 20px; }
+@media (min-width: 961px) { .price-bar { display: none !important; } }
+
+/* Steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 4px solid var(--pine); }
+.steps li::before { content: counter(s); font: 400 2.2rem/1 var(--font-display); color: var(--maple-text); }
+.steps strong { font-size: 1.15rem; }
+.steps span { color: var(--muted); }
+@media (max-width: 960px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+/* Promises + services */
+.promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.promise { display: grid; gap: 10px; align-content: start; }
+.promise .badge { width: 60px; height: 60px; border-radius: 16px; background: var(--forest); color: #FFD99A; display: grid; place-items: center; }
+.promise .badge svg { width: 32px; height: 32px; }
+.promise h3 { font-size: 1.3rem; }
+.promise p { color: var(--muted); }
+@media (max-width: 960px) { .promises { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .promises { grid-template-columns: 1fr; } }
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--line); }
+.service { padding: 22px 22px 22px 0; border-bottom: 2px solid var(--line); display: grid; gap: 6px; }
+.service h3 { font-size: 1.25rem; }
+.service p { color: var(--muted); }
+@media (max-width: 860px) { .services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+
+.area { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.towns { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.towns li { padding: 10px 16px; border-radius: 999px; background: var(--pine-soft); font-weight: 700; }
+.towns li.home { background: var(--forest); color: var(--forest-ink); }
+@media (max-width: 860px) { .area { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq { display: grid; gap: 12px; max-width: 860px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.faq summary { list-style: none; cursor: pointer; padding: 20px 56px 20px 22px; font-weight: 700; font-size: 1.15rem; position: relative; min-height: 64px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font: 400 1.6rem/1 var(--font-display); color: var(--maple-text); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding: 0 22px 20px; color: var(--muted); max-width: 65ch; }
+
+/* Closing CTA + footer */
+.cta { background: var(--forest); color: var(--forest-ink); }
+.cta .wrap { padding-block: 64px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.cta h2 { font-size: var(--step-3); max-width: 18ch; }
+.cta p { margin-top: 10px; font-size: var(--step-1); opacity: .95; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+footer.site-footer { background: var(--hero-near); color: var(--forest-ink); }
+footer.site-footer .wrap { padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; align-items: center; font-size: 1rem; }
+footer .brand-name { color: var(--forest-ink); }
+@media (max-width: 960px) { footer.site-footer .wrap { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); } }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.foot-links a { color: var(--forest-ink); font-weight: 700; text-underline-offset: 4px; }
+
+/* Header links (wide screens) */
+.top-nav { display: flex; gap: 4px; margin-left: auto; }
+.top-nav a { padding: 10px 14px; border-radius: 999px; font-weight: 700; text-decoration: none; color: var(--ink); }
+.top-nav a:hover { background: var(--pine-soft); }
+@media (max-width: 900px) { .top-nav { display: none; } }
+
+/* Booking request form */
+.book-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 32px; align-items: start; }
+@media (max-width: 960px) { .book-grid { grid-template-columns: 1fr; } }
+.book-form { display: grid; gap: 22px; }
+.bf-group { margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); display: grid; gap: 18px; min-width: 0; }
+@media (max-width: 520px) { .bf-group { padding: 18px; } }
+.bf-group > legend { float: left; width: 100%; padding: 0; font: 400 var(--step-2)/1.15 var(--font-display); }
+.opt { font-family: var(--font-body); font-size: 1rem; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+.bf-field { display: grid; gap: 6px; min-width: 0; }
+.bf-field > label { font-weight: 700; font-size: 1.1rem; }
+.bf-input { width: 100%; min-height: 56px; padding: 12px 14px; border-radius: 10px; border: 2px solid var(--line); background: var(--surface); color: var(--ink); font: 400 var(--step-0)/1.4 var(--font-body); }
+.bf-input::placeholder { color: var(--muted); opacity: .8; }
+.bf-input:hover { border-color: var(--pine); }
+.bf-input:focus { border-color: var(--pine); }
+textarea.bf-input { min-height: 130px; resize: vertical; }
+.bf-input[aria-invalid="true"] { border-color: var(--error); box-shadow: inset 0 0 0 1px var(--error); }
+.bf-error { color: var(--error); font-weight: 700; }
+.bf-help { color: var(--muted); }
+.bf-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 24px; align-items: end; }
+@media (max-width: 600px) { .bf-row { grid-template-columns: 1fr; } }
+.bf-check { display: flex; align-items: center; gap: 12px; min-height: 56px; font-weight: 700; cursor: pointer; }
+.bf-check input { width: 28px; height: 28px; margin: 0; accent-color: var(--pine); flex: none; cursor: pointer; }
+.bf-sub { border: 0; margin: 0; padding: 0; min-width: 0; }
+.bf-sub legend { padding: 0; margin-bottom: 8px; font-weight: 700; font-size: 1.1rem; }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill { position: relative; }
+.pill input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pill label { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 20px; border-radius: 999px; border: 2px solid var(--line); background: var(--surface); font-weight: 700; cursor: pointer; }
+.pill label:hover { border-color: var(--pine); }
+.pill label svg { width: 20px; height: 20px; color: var(--pine); }
+.pill input:checked + label { border-color: var(--pine); background: var(--pine-soft); box-shadow: inset 0 0 0 1px var(--pine); }
+.pill input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.photo-add { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 96px; padding: 14px; border: 2px dashed var(--pine); border-radius: 12px; background: var(--surface); color: var(--pine); font-weight: 700; font-size: 1.15rem; cursor: pointer; text-align: center; }
+.photo-add:hover { background: var(--pine-soft); }
+.photo-add svg { width: 30px; height: 30px; flex: none; }
+#bf-picker:focus-visible + .photo-add { outline: 3px solid var(--focus); outline-offset: 2px; }
+.thumbs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.thumbs:empty { display: none; }
+.thumbs li { position: relative; aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--line); }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumbs button { position: absolute; top: 6px; right: 6px; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; background: rgba(0, 0, 0, .72); color: #fff; font: 700 1.3rem/1 var(--font-body); cursor: pointer; }
+.bf-estimate { display: grid; gap: 4px; padding: 18px 20px; background: var(--kraft); color: var(--kraft-ink); border: 2px solid var(--kraft-edge); border-radius: 8px; }
+.bf-estimate .eyebrow { font-size: 0.85rem; }
+.bf-estimate strong { font: 400 1.75rem/1.15 var(--font-display); font-variant-numeric: tabular-nums; }
+.bf-estimate a { font-weight: 700; justify-self: start; margin-top: 4px; text-underline-offset: 4px; }
+.bf-submit { width: 100%; min-height: 66px; font-size: 1.25rem; }
+.bf-submit[disabled] { opacity: .7; cursor: progress; }
+.bf-status { text-align: center; font-weight: 700; color: var(--error); }
+.bf-status:empty { display: none; }
+.bf-privacy { text-align: center; color: var(--muted); font-size: 1rem; margin-top: -8px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.bf-panel { display: grid; gap: 14px; justify-items: center; text-align: center; padding: 36px 24px; border: 2px solid var(--pine); border-radius: var(--radius); background: var(--bg); }
+.bf-panel:focus { outline: none; }
+.bf-panel h3 { font-size: var(--step-2); }
+.bf-panel > p { max-width: 46ch; }
+.bf-panel .btn { width: min(100%, 420px); }
+.bf-panel details { width: min(100%, 520px); text-align: left; }
+.bf-panel .msg-box { border-color: var(--line); }
+.big-check { width: 76px; height: 76px; border-radius: 50%; background: var(--pine); color: var(--surface); display: grid; place-items: center; }
+.big-check svg { width: 42px; height: 42px; }
+.link-btn { background: none; border: 0; color: var(--ink); font: 700 1rem var(--font-body); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; min-height: 48px; padding: 0 12px; }
+.book-side { display: grid; gap: 18px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 92px); }
+@media (max-width: 960px) { .book-side { position: static; } }
+.side-card { display: grid; gap: 10px; padding: 24px; border-radius: var(--radius); background: var(--forest); color: var(--forest-ink); }
+.side-card h3 { font-size: 1.4rem; }
+.side-card .big { font: 400 1.7rem/1.2 var(--font-display); user-select: all; }
+.side-card .btn { width: 100%; margin-top: 6px; }
+.side-card.kraft { background: var(--kraft); color: var(--kraft-ink); border: 2px solid var(--kraft-edge); }
+.faq details p a { color: var(--ink); font-weight: 700; text-underline-offset: 4px; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 7 7L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8l9-4 9 4v9l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v9"/></g></symbol>
+    <symbol id="i-up" viewBox="0 0 18 22"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 20V3M3 9l6-6 6 6"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="i-transfer" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 8h15l-4-4M20 16H5l4 4"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></g></symbol>
+    <symbol id="i-cash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v4M18 10v4"/></g></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></g></symbol>
+    <symbol id="i-pine" viewBox="0 0 40 70"><path d="M20 0 L31 20 H25 L36 38 H28 L40 58 H23 V70 H17 V58 H0 L12 38 H4 L15 20 H9 Z"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Mighty Moose Moving, back to top">
+      <img src="logo-sm.webp" alt="" width="52" height="53">
+      <span class="brand-name">Mighty Moose<small>Moving</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="#quote">Free price</a>
+      <a href="#book">Book a move</a>
+      <a href="checklist.html">Moving checklist</a>
+    </nav>
+    <a class="btn btn-red header-call" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Call <span class="long num">(226) 637-0481</span></span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Local movers in London, Ontario</p>
+        <h1>Let the Moose do the <em>heavy lifting.</em></h1>
+        <p class="lead">Get a free moving price in about a minute. No sign-up, no email, no pressure.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#quote"><svg aria-hidden="true"><use href="#i-box"/></svg>Get my free price</a>
+          <a class="btn btn-ghost" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">(226) 637-0481</span></a>
+        </div>
+        <ul class="hero-facts">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>One price, in writing</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Owner on every job</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Local to London</li>
+        </ul>
+      </div>
+      <img class="hero-logo" src="logo.webp" width="720" height="733" alt="Mighty Moose Moving logo: a moose in a red plaid shirt and Canada cap giving two thumbs up beside moving boxes">
+    </div>
+    <svg class="forest-line" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
+      <path class="far" d="M0 150 V92 L120 58 L210 84 L330 30 L450 80 L560 52 L690 96 L820 36 L940 78 L1060 46 L1200 88 V150 Z"/>
+      <g class="near" id="pines"></g>
+      <rect class="near" x="0" y="138" width="1200" height="12"/>
+    </svg>
+  </section>
+  <div class="plaid" aria-hidden="true"></div>
+
+  <section class="band" id="quote" aria-labelledby="quote-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">Free price, right now</p>
+        <h2 id="quote-h">What will my move cost?</h2>
+        <p>Tap your answers below. The price updates as you go. We filled in the most common answers to start, so just change what's different.</p>
+      </header>
+
+      <div class="quote-grid">
+        <form class="questions" id="quote-form" novalidate>
+          <fieldset class="q">
+            <legend><span class="q-num">1</span><span class="q-title">What are you moving?</span></legend>
+            <p class="q-hint">Pick the closest one.</p>
+            <div class="choices" id="size-choices"></div>
+          </fieldset>
+
+          <fieldset class="q">
+            <legend><span class="q-num">2</span><span class="q-title">How many movers?</span></legend>
+            <p class="q-hint" id="movers-hint">We picked the usual crew for your move. More movers finish sooner.</p>
+            <div class="choices list" id="mover-choices"></div>
+          </fieldset>
+
+          <fieldset class="q" id="q-distance">
+            <legend><span class="q-num">3</span><span class="q-title">How far is the move?</span></legend>
+            <p class="q-hint">From your old place to your new place. Not sure? Pick "Across London".</p>
+            <div class="choices" id="dist-choices"></div>
+            <p class="note" id="dist-note" hidden>For loading help, distance doesn't change the price.</p>
+          </fieldset>
+
+          <fieldset class="q">
+            <legend><span class="q-num">4</span><span class="q-title">Any stairs?</span></legend>
+            <p class="q-hint">Think about both places and pick the harder one.</p>
+            <div class="choices" id="stairs-choices"></div>
+          </fieldset>
+
+          <fieldset class="q">
+            <legend><span class="q-num">5</span><span class="q-title">Anything extra?</span></legend>
+            <p class="q-hint">Tap any that apply. Skip this if none do.</p>
+            <div class="choices list" id="extra-choices"></div>
+            <div class="stepper">
+              <div class="txt"><strong>Heavy items</strong><span>Fridge, washer, dryer, treadmill or a big sectional. Each one adds about half an hour.</span></div>
+              <div class="count">
+                <button type="button" id="heavy-minus" aria-label="One less heavy item">−</button>
+                <output id="heavy-count" aria-live="polite" class="num">0</output>
+                <button type="button" id="heavy-plus" aria-label="One more heavy item">+</button>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+
+        <aside class="estimate" aria-labelledby="est-h" id="estimate">
+          <div class="label-card">
+            <div class="label-top">
+              <span class="eyebrow" id="est-h">Your moving price</span>
+              <span class="arrows" aria-hidden="true"><svg><use href="#i-up"/></svg><svg><use href="#i-up"/></svg></span>
+            </div>
+
+            <div id="est-normal">
+              <p class="price num" id="est-price" aria-live="polite">$749</p>
+              <p class="price-sub" id="est-summary">1-bedroom · across London · no stairs</p>
+              <div class="deposit"><span>Deposit to book (30%)</span><span class="num" id="est-deposit">$225</span><span class="dep-pay">Pay by e-transfer, card or cash</span></div>
+              <ul class="included" id="est-included">
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>2 movers for about 5½ hours</span></li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>15 ft truck, gas and kilometres</span></li>
+                <li><svg aria-hidden="true"><use href="#i-check"/></svg><span>Blankets, straps and stretch wrap</span></li>
+              </ul>
+              <p class="fine">This is an estimate. Send us a few photos and we'll give you one fixed price in writing before you book.</p>
+            </div>
+
+            <div id="est-custom" hidden>
+              <p class="custom-msg" id="custom-msg">Let's talk about this one.</p>
+              <p class="fine" id="custom-why">Long moves get a custom price. Call or text us and we'll work it out with you.</p>
+            </div>
+
+            <div class="send">
+              <h3 id="book-cta-h">Like this price?</h3>
+              <a class="btn btn-red" href="#book"><svg aria-hidden="true"><use href="#i-box"/></svg><span id="book-cta">Book this price</span></a>
+              <a class="btn btn-forest" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call us</a>
+              <p class="phone-line">Text or call<span class="big num">(226) 637-0481</span></p>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" id="book" aria-labelledby="book-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">Book your move</p>
+        <h2 id="book-h">Ask for your fixed price</h2>
+        <p>Fill this in and we'll get back to you with one fixed price in writing. Only your name and phone number are needed.</p>
+      </header>
+
+      <div class="book-grid">
+        <div>
+          <form class="book-form" id="book-form" name="booking" method="POST" action="/" data-netlify="true" netlify-honeypot="bot-field" enctype="multipart/form-data" novalidate>
+            <input type="hidden" name="form-name" value="booking">
+            <input type="hidden" name="subject" id="bf-subject" value="New moving request">
+            <input type="hidden" name="estimate" id="bf-estimate-field" value="">
+            <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" id="bf-bot" tabindex="-1" autocomplete="off"></label></p>
+            <div hidden><input type="file" name="photo1"><input type="file" name="photo2"><input type="file" name="photo3"><input type="file" name="photo4"></div>
+
+            <fieldset class="bf-group">
+              <legend>About you</legend>
+              <div class="bf-field">
+                <label for="bf-name">Your name</label>
+                <input class="bf-input" id="bf-name" name="name" type="text" autocomplete="name" aria-describedby="bf-name-err">
+                <p class="bf-error" id="bf-name-err" hidden>Please add your name.</p>
+              </div>
+              <div class="bf-field">
+                <label for="bf-phone">Phone number</label>
+                <input class="bf-input num" id="bf-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="e.g. 519 555 0123" aria-describedby="bf-phone-err">
+                <p class="bf-error" id="bf-phone-err" hidden>Please add your phone number with the area code (10 digits).</p>
+              </div>
+              <div class="bf-field">
+                <label for="bf-email">Email <span class="opt">(optional)</span></label>
+                <input class="bf-input" id="bf-email" name="email" type="email" inputmode="email" autocomplete="email" aria-describedby="bf-email-err">
+                <p class="bf-error" id="bf-email-err" hidden>That email doesn't look right. Please check it.</p>
+              </div>
+              <fieldset class="bf-sub">
+                <legend>How should we get back to you?</legend>
+                <div class="pills">
+                  <span class="pill"><input type="radio" name="contact_by" id="cb-text" value="Text" checked><label for="cb-text"><svg aria-hidden="true"><use href="#i-text"/></svg>Text me</label></span>
+                  <span class="pill"><input type="radio" name="contact_by" id="cb-call" value="Call"><label for="cb-call"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call me</label></span>
+                  <span class="pill"><input type="radio" name="contact_by" id="cb-email" value="Email"><label for="cb-email"><svg aria-hidden="true"><use href="#i-mail"/></svg>Email me</label></span>
+                </div>
+              </fieldset>
+            </fieldset>
+
+            <fieldset class="bf-group">
+              <legend>Your move</legend>
+              <div class="bf-row">
+                <div class="bf-field">
+                  <label for="bf-date">Moving date <span class="opt">(optional)</span></label>
+                  <input class="bf-input" id="bf-date" name="move_date" type="date">
+                </div>
+                <label class="bf-check"><input type="checkbox" id="bf-flex" name="date_flexible" value="Yes">My date is flexible</label>
+              </div>
+              <div class="bf-field">
+                <label for="bf-from">Moving from <span class="opt">(optional)</span></label>
+                <input class="bf-input" id="bf-from" name="from" type="text" autocomplete="street-address" placeholder="Street address, or just the area">
+              </div>
+              <div class="bf-field">
+                <label for="bf-to">Moving to <span class="opt">(optional)</span></label>
+                <input class="bf-input" id="bf-to" name="to" type="text" placeholder="Street address, or just the town">
+              </div>
+            </fieldset>
+
+            <fieldset class="bf-group">
+              <legend>Your deposit</legend>
+              <fieldset class="bf-sub">
+                <legend>How would you like to pay the 30% deposit?</legend>
+                <div class="pills">
+                  <span class="pill"><input type="radio" name="deposit_payment" id="dp-et" value="E-transfer" checked><label for="dp-et"><svg aria-hidden="true"><use href="#i-transfer"/></svg>E-transfer</label></span>
+                  <span class="pill"><input type="radio" name="deposit_payment" id="dp-card" value="Card"><label for="dp-card"><svg aria-hidden="true"><use href="#i-card"/></svg>Card</label></span>
+                  <span class="pill"><input type="radio" name="deposit_payment" id="dp-cash" value="Cash"><label for="dp-cash"><svg aria-hidden="true"><use href="#i-cash"/></svg>Cash</label></span>
+                </div>
+              </fieldset>
+              <p class="bf-help">Nothing is charged now. We'll tell you how to pay when we send your fixed price.</p>
+            </fieldset>
+
+            <fieldset class="bf-group" id="bf-photos">
+              <legend>Photos <span class="opt">(optional)</span></legend>
+              <div id="bf-photo-tools">
+                <p class="bf-help" style="margin-bottom: 14px;">Photos of your big furniture help us give you an exact price. You can add up to 4.</p>
+                <input type="file" id="bf-picker" class="visually-hidden" accept="image/*" multiple>
+                <label for="bf-picker" class="photo-add" id="bf-add"><svg aria-hidden="true"><use href="#i-camera"/></svg><span id="bf-add-label">Add photos</span></label>
+                <ul class="thumbs" id="bf-thumbs" aria-label="Photos you added" style="margin-top: 14px;"></ul>
+                <p class="bf-help" id="bf-photo-note" aria-live="polite" style="margin-top: 10px;">Have a video? Text it to us at <span class="num">(226) 637-0481</span>.</p>
+              </div>
+              <p class="bf-help" id="bf-photo-text" hidden>You can add photos to the text message in the next step.</p>
+            </fieldset>
+
+            <fieldset class="bf-group">
+              <legend>Anything else? <span class="opt">(optional)</span></legend>
+              <div class="bf-field">
+                <label for="bf-notes" class="visually-hidden">Anything else we should know</label>
+                <textarea class="bf-input" id="bf-notes" name="notes" rows="4" placeholder="e.g. narrow stairs, a big sectional couch, a long walk from the door to the truck"></textarea>
+              </div>
+            </fieldset>
+
+            <div class="bf-estimate">
+              <span class="eyebrow">Your price estimate goes with it</span>
+              <strong id="bf-est-price">$749</strong>
+              <span id="bf-est-sum">1-bedroom · across London · no stairs</span>
+              <a href="#quote">Change my answers</a>
+            </div>
+
+            <button class="btn btn-red bf-submit" type="submit" id="bf-submit"><svg aria-hidden="true"><use href="#i-mail"/></svg><span id="bf-submit-label">Send my request</span></button>
+            <p class="bf-status" id="bf-status" role="status" aria-live="polite"></p>
+            <p class="bf-privacy">We only use your details to plan your move.</p>
+          </form>
+
+          <div class="bf-panel" id="bf-done" hidden tabindex="-1" aria-labelledby="bf-done-h">
+            <span class="big-check" aria-hidden="true"><svg><use href="#i-check"/></svg></span>
+            <h3 id="bf-done-h">Thanks! Your request is in.</h3>
+            <p id="bf-done-p">We'll get back to you soon with your fixed price.</p>
+            <p>Need us sooner? Call or text <strong class="num">(226) 637-0481</strong>.</p>
+            <a class="btn btn-plain" href="checklist.html"><svg aria-hidden="true"><use href="#i-list"/></svg>Open the checklist</a>
+          </div>
+
+          <div class="bf-panel" id="bf-text" hidden tabindex="-1" aria-labelledby="bf-text-h">
+            <h3 id="bf-text-h">Last step: text it to us</h3>
+            <p id="bf-text-p">Tap the red button. Your text messages open with everything filled in. Then press send.</p>
+            <a class="btn btn-red" id="bf-sms" href="sms:+12266370481"><svg aria-hidden="true"><use href="#i-text"/></svg>Open my text messages</a>
+            <button class="btn btn-plain" type="button" id="bf-copy"><svg aria-hidden="true"><use href="#i-copy"/></svg>Copy my request</button>
+            <p class="copy-status" id="bf-copy-status" aria-live="polite"></p>
+            <p class="phone-line">Our number<span class="big num">(226) 637-0481</span></p>
+            <p class="bf-help">Have photos? Add them to the same text.</p>
+            <details class="show-msg" id="bf-msg-details">
+              <summary>See the message</summary>
+              <textarea class="msg-box" id="bf-msg" readonly aria-label="Your request message"></textarea>
+            </details>
+            <button class="link-btn" type="button" id="bf-back">Go back and change something</button>
+          </div>
+        </div>
+
+        <aside class="book-side" aria-label="Other ways to reach us">
+          <div class="side-card">
+            <h3>Rather talk?</h3>
+            <p>Call or text. A real person answers.</p>
+            <p class="big num">(226) 637-0481</p>
+            <a class="btn btn-ghost" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call us</a>
+          </div>
+          <div class="side-card kraft">
+            <h3>Free moving checklist</h3>
+            <p>Everything to do from two months out to your first night in the new place. Tick things off as you go.</p>
+            <a class="btn btn-forest" href="checklist.html"><svg aria-hidden="true"><use href="#i-list"/></svg>Open the checklist</a>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="how-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">How booking works</p>
+        <h2 id="how-h">Five simple steps, no surprises</h2>
+      </header>
+      <ol class="steps">
+        <li><strong>Get your price here</strong><span>Answer five quick questions above.</span></li>
+        <li><strong>Send us photos</strong><span>Add them to your request, or text us pictures or a short video.</span></li>
+        <li><strong>Get one fixed price</strong><span>We text or email it to you in writing.</span></li>
+        <li><strong>Hold your date</strong><span>Pay a 30% deposit by e-transfer, card or cash. The rest is due when we're done.</span></li>
+        <li><strong>Moving day</strong><span>We text when we're on the way, then do the heavy lifting.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band alt" aria-labelledby="why-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">Why Mighty Moose</p>
+        <h2 id="why-h">A small local crew that does it right</h2>
+      </header>
+      <div class="promises">
+        <div class="promise"><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M6 3h9l4 4v14H6z"/><path d="M9 12h7M9 16h7M9 8h3"/></g></svg></span><h3>One price, in writing</h3><p>You know the total before you book. It doesn't change because the day ran long.</p></div>
+        <div class="promise"><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1-4 4-6 8-6s7 2 8 6"/></g></svg></span><h3>The owner is on every job</h3><p>You talk to the person who carries your things, start to finish.</p></div>
+        <div class="promise"><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-box"/></svg></span><h3>Wrapped and strapped</h3><p>Furniture goes in moving blankets and gets strapped down in the truck.</p></div>
+        <div class="promise"><span class="badge" aria-hidden="true"><svg viewBox="0 0 24 24"><use href="#i-text"/></svg></span><h3>A text on the way</h3><p>We give you a one-hour arrival window and text you when we leave.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="svc-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">What we move</p>
+        <h2 id="svc-h">Big moves, small moves, single items</h2>
+      </header>
+      <div class="services">
+        <div class="service"><h3>Apartments and condos</h3><p>Elevator bookings, stairs and tight hallways handled.</p></div>
+        <div class="service"><h3>House moves</h3><p>Two to four bedrooms, with a crew sized to the job.</p></div>
+        <div class="service"><h3>Student moves</h3><p>Dorms and rentals near Western and Fanshawe.</p></div>
+        <div class="service"><h3>Loading help</h3><p>Got your own truck or pod? We load it or unload it.</p></div>
+        <div class="service"><h3>Furniture pickup</h3><p>Bought something on Marketplace or Kijiji? We'll bring it home.</p></div>
+        <div class="service"><h3>Small offices</h3><p>Desks, files and equipment, moved after hours if you need.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" aria-labelledby="area-h">
+    <div class="wrap area">
+      <div>
+        <p class="eyebrow" style="color: var(--maple-text)">Where we work</p>
+        <h2 id="area-h" style="font-size: var(--step-3); margin-top: 12px;">London and the towns around it</h2>
+        <p style="margin-top: 14px; color: var(--muted); font-size: var(--step-1); max-width: 34ch;">Moving farther than 100 km? Call or text us for a custom price.</p>
+      </div>
+      <ul class="towns">
+        <li class="home">London</li><li>St. Thomas</li><li>Strathroy</li><li>Komoka</li><li>Ilderton</li><li>Dorchester</li><li>Lucan</li><li>Belmont</li><li>Thorndale</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="faq-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">Questions</p>
+        <h2 id="faq-h">Good to know</h2>
+      </header>
+      <div class="faq">
+        <details><summary>Is the price really free?</summary><p>Yes. The price tool is free, and you don't need to sign up or give us your email to use it.</p></details>
+        <details><summary>How do you set the final price?</summary><p>Send us a few photos or a short video of what's moving. We reply with one fixed price in writing. That's the price for the job we agreed on, even if moving day runs long.</p></details>
+        <details><summary>How does the deposit work?</summary><p>To hold your date, you pay 30% of the price. The rest is paid when the move is done. Cancel 72 hours or more before your move and you get your deposit back.</p></details>
+        <details><summary>How do I pay?</summary><p>E-transfer, card or cash. That goes for the deposit and for the rest of the price on moving day.</p></details>
+        <details><summary>Is there anything you don't move?</summary><p>We don't move pianos, safes or hot tubs, or anything dangerous like propane, gasoline or paint.</p></details>
+        <details><summary>What should I do before moving day?</summary><p>Pack and tape your boxes (or ask for packing help), empty your dresser drawers, and book the elevator if your building needs it. Our <a href="checklist.html">free moving checklist</a> has the full list, week by week.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div>
+        <h2 id="cta-h">Ready when you are.</h2>
+        <p>Call or text <span class="num">(226) 637-0481</span>. A real person answers.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-red" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now</a>
+        <a class="btn btn-ghost" href="#quote"><svg aria-hidden="true"><use href="#i-box"/></svg>Get my free price</a>
+      </div>
+    </div>
+  </section>
+  <div class="plaid" aria-hidden="true"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="brand-name">Mighty Moose Moving</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="#quote">Free price</a>
+      <a href="#book">Book a move</a>
+      <a href="checklist.html">Moving checklist</a>
+    </nav>
+    <span>London, Ontario · <span class="num">(226) 637-0481</span></span>
+    <span>© 2026 Mighty Moose Moving</span>
+  </div>
+</footer>
+
+<div class="price-bar" id="price-bar" hidden>
+  <div><small>Your price</small><strong id="bar-price">$749</strong></div>
+  <a class="btn btn-red" href="#estimate">See details</a>
+</div>
+
+<script>
+/* ---------- Website settings ---------- */
+var SITE = {
+  emailForm: true  // true on your own web address (Netlify): the booking form emails you. false: it hands the request to a text message.
+};
+
+/* ---------- Prices: the same numbers and rules as your Google Sheet "Mighty Moose Moving - Jobs & Profit".
+   If you change a number on the sheet's Settings or Trucks tab, change it here too so they keep agreeing. ---------- */
+var PRICING = {
+  perMoverHour: 55,      // Settings: Charge per mover per hour
+  minHours: 3,           // Settings: Minimum billed hours
+  gasPerLitre: 1.40,     // Settings: Gas price ($ per litre)
+  fuelBuffer: 0.15,      // Settings: Extra fuel for loaded, stop-and-go driving
+  uhaulFees: 25,         // Settings: U-Haul extra fees per rental
+  rentalTax: 0.13,       // Settings: Tax on truck rental (HST)
+  depositPct: 0.30,      // Settings: Deposit (% of price)
+  heavyItemHours: 0.5    // website only: extra work time for each fridge, washer, treadmill...
+};
+var TRUCKS = { // Trucks tab: daily rate, per km, litres per 100 km
+  van: { name: "9 ft Cargo Van", day: 20.95, km: 1.09, fuel: 13.1 },
+  t10: { name: "10 ft Truck", day: 20.95, km: 1.29, fuel: 19.6 },
+  t15: { name: "15 ft Truck", day: 30.95, km: 1.29, fuel: 23.5 },
+  t20: { name: "20 ft Truck", day: 40.95, km: 1.29, fuel: 23.5 },
+  t26: { name: "26 ft Truck", day: 50.95, km: 1.29, fuel: 26.1 }
+};
+var SIZES = [
+  { id: "labour", label: "Loading help only", sub: "You have the truck or pod", short: "loading help", truck: null, movers: 2, hours: 2, supplies: 0, packing: 0, icon: "dolly" },
+  { id: "items", label: "A few big items", sub: "Couch, bed, dresser", short: "a few items", truck: "van", movers: 2, hours: 2, supplies: 10, packing: 20, icon: "couch" },
+  { id: "studio", label: "Studio or dorm", sub: "One room", short: "studio or dorm", truck: "t10", movers: 2, hours: 3, supplies: 20, packing: 40, icon: 1 },
+  { id: "one", label: "1-bedroom", sub: "Apartment or condo", short: "1-bedroom", truck: "t15", movers: 2, hours: 5, supplies: 20, packing: 60, icon: 2 },
+  { id: "two", label: "2-bedroom", sub: "Apartment or small house", short: "2-bedroom", truck: "t20", movers: 3, hours: 5.5, supplies: 30, packing: 80, icon: 3 },
+  { id: "three", label: "3-bedroom house", sub: "Most family homes", short: "3-bedroom house", truck: "t26", movers: 3, hours: 7, supplies: 40, packing: 110, icon: 4 },
+  { id: "four", label: "4+ bedroom house", sub: "Big home, lots of stuff", short: "4+ bedroom house", truck: "t26", movers: 4, hours: 8, supplies: 50, packing: 140, icon: 5 }
+];
+var DISTANCES = [
+  { id: "d5", label: "Under 5 km", sub: "Same neighbourhood", short: "under 5 km", km: 3, drive: 0 },
+  { id: "d15", label: "Across London", sub: "5 to 15 km", short: "across London", km: 10, drive: 0.5 },
+  { id: "d40", label: "Nearby town", sub: "15 to 40 km, like St. Thomas or Strathroy", short: "15–40 km", km: 27, drive: 1 },
+  { id: "d100", label: "Farther away", sub: "40 to 100 km", short: "40–100 km", km: 70, drive: 2 },
+  { id: "far", label: "Over 100 km", sub: "We'll give you a custom price", short: "over 100 km", custom: true }
+];
+var MOVERS = [
+  { id: "2", n: 2, label: "2 movers", sub: "Good for apartments and small moves", icon: "p2" },
+  { id: "3", n: 3, label: "3 movers", sub: "Good for 2 and 3 bedroom homes", icon: "p3" },
+  { id: "4", n: 4, label: "4 movers", sub: "Best for big houses", icon: "p4" }
+];
+var STAIRS = [
+  { id: "none", label: "No stairs", sub: "Ground floor or a few steps", short: "no stairs", extra: 0 },
+  { id: "elev", label: "Elevator", sub: "Apartment or condo building", short: "elevator", extra: 0.10 },
+  { id: "some", label: "1 or 2 flights", sub: "Walk-up or basement", short: "1–2 flights of stairs", extra: 0.15 },
+  { id: "lots", label: "3 or more flights", sub: "High walk-up", short: "3+ flights of stairs", extra: 0.30 }
+];
+var EXTRAS = [
+  { id: "assembly", label: "Take apart furniture", sub: "Beds, tables, shelves, and we put them back together" },
+  { id: "packing", label: "Packing help", sub: "We bring boxes and tape and pack for you" },
+  { id: "special", label: "Piano, safe or hot tub", sub: "These need a look first" }
+];
+
+var state = { size: "one", movers: 0, dist: "d15", stairs: "none", assembly: false, packing: false, special: false, heavy: 0 }; // movers 0 = the crew we suggest
+try { var saved = JSON.parse(localStorage.getItem("mm-quote") || "null"); if (saved && typeof saved === "object") { for (var k in state) if (k in saved) state[k] = saved[k]; } } catch (e) {}
+if ([0, 2, 3, 4].indexOf(state.movers) < 0) state.movers = 0;
+
+var PHONE = "+12266370481";
+function $(id) { return document.getElementById(id); }
+function money(n) { return "$" + Math.round(n).toLocaleString("en-CA"); }
+function hoursText(h) {
+  var whole = Math.floor(h), half = h - whole >= 0.5;
+  return (whole > 0 ? whole : "") + (half ? "½" : "") + (h === 1 ? " hour" : " hours");
+}
+function find(list, id) { for (var i = 0; i < list.length; i++) if (list[i].id === id) return list[i]; return list[0]; }
+
+function iconSvg(icon) {
+  if (icon === "dolly") return '<svg viewBox="0 0 46 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 4v28h22"/><rect x="17" y="10" width="14" height="10" rx="1"/><rect x="17" y="20" width="14" height="10" rx="1"/><circle cx="14" cy="35" r="3"/></g></svg>';
+  if (/^p\d$/.test(icon)) { // a row of little people
+    var np = +icon.slice(1), pg = 3, pw = Math.min(12, (44 - (np - 1) * pg) / np), pt = np * pw + (np - 1) * pg, px0 = (46 - pt) / 2, ppl = "";
+    for (var j = 0; j < np; j++) {
+      var px = px0 + j * (pw + pg);
+      ppl += '<circle cx="' + (px + pw / 2) + '" cy="11" r="' + (pw * 0.32) + '"/><path d="M' + px + ' 33v-7a' + (pw / 2) + ' ' + (pw / 2) + ' 0 0 1 ' + pw + ' 0v7"/>';
+    }
+    return '<svg viewBox="0 0 46 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">' + ppl + '</g></svg>';
+  }
+  if (icon === "couch") return '<svg viewBox="0 0 46 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"><path d="M9 20v-6a4 4 0 0 1 4-4h20a4 4 0 0 1 4 4v6"/><path d="M5 20a3 3 0 0 1 6 0v4h24v-4a3 3 0 0 1 6 0v9H5z"/><path d="M9 29v4M37 29v4"/></g></svg>';
+  var n = icon, out = "", gap = 2, w = Math.min(12, (44 - (n - 1) * gap) / n), total = n * w + (n - 1) * gap, x0 = (46 - total) / 2;
+  for (var i = 0; i < n; i++) { var x = x0 + i * (w + gap); out += '<rect x="' + x + '" y="16" width="' + w + '" height="16" rx="1.5"/><path d="M' + (x + w / 2) + ' 16v5"/>'; }
+  return '<svg viewBox="0 0 46 40" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">' + out + '</g></svg>';
+}
+var TICK = '<span class="tick" aria-hidden="true"><svg><use href="#i-check"/></svg></span>';
+function buildChoices(containerId, name, list, type, withIcons) {
+  var html = "";
+  list.forEach(function (o) {
+    var id = name + "-" + o.id;
+    html += '<div class="choice"><input type="' + type + '" name="' + name + '" id="' + id + '" value="' + o.id + '">' +
+      '<label for="' + id + '">' + (withIcons ? '<span class="ico">' + iconSvg(o.icon) + '</span>' : '') +
+      '<span class="txt"><strong>' + o.label + (name === "movers" ? '<span class="rec">Suggested</span>' : '') + '</strong><span>' + o.sub + '</span></span>' + TICK + '</label></div>';
+  });
+  $(containerId).innerHTML = html;
+}
+buildChoices("size-choices", "size", SIZES, "radio", true);
+buildChoices("mover-choices", "movers", MOVERS, "radio", true);
+buildChoices("dist-choices", "dist", DISTANCES, "radio", false);
+buildChoices("stairs-choices", "stairs", STAIRS, "radio", false);
+buildChoices("extra-choices", "extra", EXTRAS, "checkbox", false);
+
+function syncInputs() {
+  $("size-" + state.size).checked = true;
+  var rec = find(SIZES, state.size).movers;
+  $("movers-" + (state.movers || rec)).checked = true;
+  MOVERS.forEach(function (m) { $("movers-" + m.id).parentNode.classList.toggle("is-rec", m.n === rec); });
+  $("movers-hint").textContent = "We suggest " + rec + " movers for this move. More movers finish sooner.";
+  $("dist-" + state.dist).checked = true;
+  $("stairs-" + state.stairs).checked = true;
+  EXTRAS.forEach(function (x) { $("extra-" + x.id).checked = !!state[x.id]; });
+  $("heavy-count").textContent = state.heavy;
+  $("heavy-minus").disabled = state.heavy <= 0;
+  $("heavy-plus").disabled = state.heavy >= 9;
+}
+
+function calculate() {
+  var size = find(SIZES, state.size), dist = find(DISTANCES, state.dist), stairs = find(STAIRS, state.stairs);
+  var labourOnly = !size.truck;
+  if ((!labourOnly && dist.custom) || state.special) {
+    return { custom: true, reason: state.special ? "special" : "far", size: size, movers: state.movers || size.movers, dist: dist, stairs: stairs };
+  }
+  // Step 1: turn the customer's answers into the sheet's yellow columns (Truck, Km, Est. hours, Movers, Supplies)
+  var base = size.hours, rec = size.movers, movers = state.movers || rec;
+  var work = base + base * stairs.extra;              // loading and unloading
+  if (state.assembly) work += (base >= 5.5 ? 1 : 0.5);
+  if (state.packing) work += base * 0.4;
+  work += state.heavy * PRICING.heavyItemHours;
+  work = work * rec / movers;                         // the same work, shared by a bigger or smaller crew
+  var estHours = Math.ceil((work + (labourOnly ? 0 : dist.drive)) * 2) / 2; // the whole crew rides along, so driving time doesn't shrink
+  var truck = labourOnly ? null : TRUCKS[size.truck];
+  var km = labourOnly ? 0 : dist.km * 2 + 10;         // U-Haul to pickup, pickup to drop-off, back to U-Haul
+  var supplies = size.supplies + (state.packing ? size.packing : 0);
+
+  // Step 2: the sheet's Jobs-tab formulas, exactly
+  var hours = Math.max(estHours, PRICING.minHours);   // Billed hours = MAX(Est. hours, minimum)
+  var truckCost = truck ? (truck.day + km * truck.km + PRICING.uhaulFees) * (1 + PRICING.rentalTax) : 0;
+  var gas = truck ? km * truck.fuel / 100 * (1 + PRICING.fuelBuffer) * PRICING.gasPerLitre : 0;
+  var labour = hours * movers * PRICING.perMoverHour;
+  var cents = function (n) { return Math.round(n * 100) / 100; };
+  var price = Math.ceil(cents(truckCost + gas + supplies + labour) / 10) * 10 - 1; // Suggested price = CEILING(..., 10) - 1
+  var deposit = Math.ceil(cents(price * PRICING.depositPct) / 5) * 5;           // Deposit = CEILING(price x 30%, 5)
+  return { custom: false, size: size, movers: movers, dist: dist, stairs: stairs, labourOnly: labourOnly, hours: hours, truck: truck, km: km, supplies: supplies, truckCost: truckCost, gas: gas, price: price, deposit: deposit };
+}
+
+function li(text) { return '<li><svg aria-hidden="true"><use href="#i-check"/></svg><span>' + text + '</span></li>'; }
+
+function render() {
+  var r = calculate();
+  $("dist-note").hidden = !(r.size && !r.size.truck);
+  $("est-normal").hidden = r.custom;
+  $("est-custom").hidden = !r.custom;
+  var summaryBits = [r.size.short, r.movers + " movers"];
+  if (r.size.truck) summaryBits.push(r.dist.short);
+  summaryBits.push(r.stairs.short);
+  var lines = [];
+  if (r.custom) {
+    $("custom-msg").textContent = "Let's talk about this one.";
+    $("custom-why").textContent = r.reason === "special"
+      ? "Pianos, safes and hot tubs need special gear, so we'd like to hear about it first. Call or text us."
+      : "Moves over 100 km get a custom price. Call or text us and we'll work it out with you.";
+    $("bar-price").textContent = "Custom price";
+  } else {
+    $("est-price").textContent = money(r.price);
+    $("est-summary").textContent = summaryBits.join(" · ");
+    $("est-deposit").textContent = money(r.deposit);
+    lines.push(r.movers + " movers for about " + hoursText(r.hours));
+    lines.push(r.labourOnly ? "No truck needed, you have your own" : capital(r.truck.name) + ", gas and kilometres");
+    lines.push("Blankets, straps and stretch wrap");
+    if (state.packing) lines.push("Packing, with boxes and tape");
+    if (state.assembly) lines.push("Taking apart and rebuilding furniture");
+    if (state.heavy) lines.push(state.heavy + " heavy item" + (state.heavy > 1 ? "s" : ""));
+    $("est-included").innerHTML = lines.map(li).join("");
+    $("bar-price").textContent = money(r.price);
+  }
+
+  // Keep the booking form's copy of the estimate in step
+  lastQuote = r;
+  $("book-cta").textContent = r.custom ? "Ask for a custom price" : "Book this price";
+  $("book-cta-h").textContent = r.custom ? "Tell us about it" : "Like this price?";
+  $("bf-est-price").textContent = r.custom ? "Custom price" : money(r.price);
+  $("bf-est-sum").textContent = summaryBits.join(" · ");
+  try { localStorage.setItem("mm-quote", JSON.stringify(state)); } catch (e) {}
+}
+function capital(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
+
+var lastQuote = null;
+// The move details, as lines of plain text for the email or text message we get
+function moveLines(r) {
+  var extras = [];
+  if (state.packing) extras.push("packing help");
+  if (state.assembly) extras.push("furniture taken apart");
+  if (state.heavy) extras.push(state.heavy + " heavy item" + (state.heavy > 1 ? "s" : ""));
+  if (state.special) extras.push("piano, safe or hot tub");
+  var lines = ["Moving: " + r.size.label, "Movers: " + r.movers + (r.movers !== r.size.movers ? " (the site suggested " + r.size.movers + ")" : "")];
+  if (r.size.truck) lines.push("Distance: " + r.dist.label + " (" + r.dist.sub + ")");
+  lines.push("Stairs: " + r.stairs.label);
+  if (extras.length) lines.push("Extras: " + extras.join(", "));
+  if (r.custom) lines.push("Website price: custom price needed");
+  else {
+    lines.push("Website price: " + money(r.price) + " (deposit " + money(r.deposit) + ")");
+    // The sheet's yellow columns, so the job can be typed straight into the Jobs tab
+    lines.push("Quote details: " + (r.truck ? r.truck.name : "No truck (labour only)") + ", " + r.km + " km, " + r.hours + " hours, " + r.movers + " movers, $" + r.supplies + " supplies");
+  }
+  return lines;
+}
+
+$("quote-form").addEventListener("change", function (e) {
+  var t = e.target;
+  if (t.name === "size" || t.name === "dist" || t.name === "stairs") state[t.name] = t.value;
+  if (t.name === "movers") { var n = +t.value; state.movers = n === find(SIZES, state.size).movers ? 0 : n; }
+  if (t.name === "extra") state[t.value] = t.checked;
+  syncInputs();
+  render();
+});
+$("quote-form").addEventListener("submit", function (e) { e.preventDefault(); });
+$("heavy-minus").addEventListener("click", function () { state.heavy = Math.max(0, state.heavy - 1); syncInputs(); render(); });
+$("heavy-plus").addEventListener("click", function () { state.heavy = Math.min(9, state.heavy + 1); syncInputs(); render(); });
+
+/* ---------- Booking request form ---------- */
+(function () {
+  var form = $("book-form"), MAX_PHOTOS = 4, photos = [], tried = false;
+
+  // On the Claude preview there is no mail server, so the form hands off to a text message instead
+  if (!SITE.emailForm) {
+    $("bf-photo-tools").hidden = true;
+    $("bf-photo-text").hidden = false;
+    $("bf-submit-label").textContent = "Next: text it to us";
+    $("bf-submit").querySelector("use").setAttribute("href", "#i-text");
+  }
+
+  // No moving dates in the past
+  var now = new Date();
+  $("bf-date").min = now.getFullYear() + "-" + String(now.getMonth() + 1).padStart(2, "0") + "-" + String(now.getDate()).padStart(2, "0");
+
+  function val(id) { return $(id).value.trim(); }
+  function depositBy() { var c = form.querySelector('input[name="deposit_payment"]:checked'); return c ? c.value : "Not sure yet"; }
+  function contactBy() { var c = form.querySelector('input[name="contact_by"]:checked'); return c ? c.value : "Text"; }
+  function digits(s) { return (s.match(/\d/g) || []).length; }
+  function fmtDate(v) {
+    if (!v) return "";
+    var p = v.split("-"), d = new Date(+p[0], +p[1] - 1, +p[2]);
+    return isNaN(d) ? v : d.toLocaleDateString("en-CA", { weekday: "long", month: "long", day: "numeric", year: "numeric" });
+  }
+  function whenText() {
+    var d = fmtDate(val("bf-date")), flex = $("bf-flex").checked;
+    if (flex) return d ? d + " (flexible)" : "Flexible, not sure yet";
+    return d;
+  }
+
+  function showError(input, errId, show, msg) {
+    if (msg) $(errId).textContent = msg;
+    $(errId).hidden = !show;
+    if (show) input.setAttribute("aria-invalid", "true"); else input.removeAttribute("aria-invalid");
+    return show;
+  }
+  function validate() {
+    var first = null;
+    if (showError($("bf-name"), "bf-name-err", !val("bf-name"))) first = first || $("bf-name");
+    var n = digits(val("bf-phone"));
+    if (showError($("bf-phone"), "bf-phone-err", n < 10 || n > 11)) first = first || $("bf-phone");
+    var em = val("bf-email"), wantsEmail = contactBy() === "Email";
+    var emailBad = em ? !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(em) : wantsEmail;
+    var emailMsg = em ? "That email doesn't look right. Please check it." : "Please add your email, or choose Text me or Call me.";
+    if (showError($("bf-email"), "bf-email-err", emailBad, emailMsg)) first = first || $("bf-email");
+    return first;
+  }
+  form.addEventListener("input", function () { if (tried && !validate()) $("bf-status").textContent = ""; });
+  form.addEventListener("change", function (e) { if (tried && e.target.name === "contact_by") validate(); });
+
+  function requestText() {
+    var lines = ["Hi Mighty Moose! This is " + val("bf-name") + ". I'd like to book a move."];
+    lines.push("Phone: " + val("bf-phone"));
+    if (val("bf-email")) lines.push("Email: " + val("bf-email"));
+    lines.push("Best way to reach me: " + contactBy());
+    lines.push("Deposit payment: " + depositBy());
+    if (whenText()) lines.push("Date: " + whenText());
+    if (val("bf-from")) lines.push("From: " + val("bf-from"));
+    if (val("bf-to")) lines.push("To: " + val("bf-to"));
+    lines = lines.concat(moveLines(lastQuote));
+    if (val("bf-notes")) lines.push("Notes: " + val("bf-notes"));
+    return lines.join("\n");
+  }
+
+  function showPanel(id) {
+    form.hidden = true; $("bf-done").hidden = true; $("bf-text").hidden = true;
+    var p = $(id); p.hidden = false;
+    p.scrollIntoView({ block: "start" });
+    p.focus({ preventScroll: true });
+  }
+  function showText(failed) {
+    var text = requestText();
+    $("bf-text-h").textContent = failed ? "That didn't go through. Please text it to us." : "Last step: text it to us";
+    $("bf-text-p").textContent = failed
+      ? "Sorry about that. Tap the red button and your text messages open with everything filled in. Then press send."
+      : "Tap the red button. Your text messages open with everything filled in. Then press send.";
+    $("bf-msg").value = text;
+    $("bf-sms").href = "sms:" + PHONE + "?&body=" + encodeURIComponent(text);
+    $("bf-copy-status").textContent = "";
+    showPanel("bf-text");
+  }
+  function showDone() {
+    var first = val("bf-name").split(/\s+/)[0], how = contactBy();
+    $("bf-done-h").textContent = "Thanks, " + first + "! Your request is in.";
+    $("bf-done-p").textContent = how === "Call" ? "We'll call you at " + val("bf-phone") + " to confirm your fixed price."
+      : how === "Email" ? "We'll email you at " + val("bf-email") + " with your fixed price."
+      : "We'll text you at " + val("bf-phone") + " with your fixed price.";
+    showPanel("bf-done");
+  }
+
+  // Photos are shrunk on the phone before sending so they upload quickly
+  function shrink(file) {
+    return new Promise(function (resolve, reject) {
+      if (!/^image\//.test(file.type || "image/")) { reject(); return; }
+      var url = URL.createObjectURL(file), img = new Image();
+      img.onload = function () {
+        var max = 1600, w = img.naturalWidth, h = img.naturalHeight, s = Math.min(1, max / Math.max(w, h));
+        var c = document.createElement("canvas"); c.width = Math.round(w * s); c.height = Math.round(h * s);
+        c.getContext("2d").drawImage(img, 0, 0, c.width, c.height);
+        URL.revokeObjectURL(url);
+        c.toBlob(function (b) { b ? resolve(b) : (file.size < 2.5e6 ? resolve(file) : reject()); }, "image/jpeg", 0.82);
+      };
+      img.onerror = function () { URL.revokeObjectURL(url); file.size < 2.5e6 ? resolve(file) : reject(); };
+      img.src = url;
+    });
+  }
+  function photoNote(text) { $("bf-photo-note").textContent = text; }
+  function drawThumbs() {
+    $("bf-thumbs").innerHTML = photos.map(function (p, i) {
+      return '<li><img src="' + p.url + '" alt="Photo ' + (i + 1) + '"><button type="button" data-i="' + i + '" aria-label="Remove photo ' + (i + 1) + '">×</button></li>';
+    }).join("");
+    $("bf-add").hidden = photos.length >= MAX_PHOTOS;
+    $("bf-add-label").textContent = photos.length ? "Add another photo" : "Add photos";
+  }
+  $("bf-picker").addEventListener("change", function () {
+    var files = Array.prototype.slice.call(this.files || []);
+    this.value = "";
+    var room = MAX_PHOTOS - photos.length;
+    if (files.length > room) photoNote("That's the 4-photo limit. Text us any others at (226) 637-0481.");
+    files.slice(0, room).forEach(function (f) {
+      shrink(f).then(function (blob) {
+        if (photos.length >= MAX_PHOTOS) return;
+        photos.push({ blob: blob, url: URL.createObjectURL(blob) });
+        drawThumbs();
+      }, function () { photoNote("One photo couldn't be added. Try another, or text it to us."); });
+    });
+  });
+  $("bf-thumbs").addEventListener("click", function (e) {
+    var b = e.target.closest("button[data-i]"); if (!b) return;
+    var gone = photos.splice(+b.getAttribute("data-i"), 1)[0];
+    if (gone) URL.revokeObjectURL(gone.url);
+    drawThumbs();
+    $("bf-picker").focus();
+  });
+
+  function sendEmail() {
+    var fd = new FormData(form);
+    for (var i = 1; i <= MAX_PHOTOS; i++) fd.delete("photo" + i);
+    photos.forEach(function (p, i) { fd.append("photo" + (i + 1), p.blob, "photo-" + (i + 1) + ".jpg"); });
+    fd.set("move_date", whenText() || "Not given");
+    fd.set("date_flexible", $("bf-flex").checked ? "Yes" : "No");
+    fd.set("estimate", moveLines(lastQuote).join("\n"));
+    fd.set("subject", "Moving request: " + val("bf-name") + (val("bf-date") ? ", " + fmtDate(val("bf-date")) : "") + ", " + lastQuote.size.short);
+    var ctrl = window.AbortController ? new AbortController() : null;
+    var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 45000);
+    return fetch(form.getAttribute("action") || "/", { method: "POST", body: fd, signal: ctrl ? ctrl.signal : undefined })
+      .then(function (res) { clearTimeout(timer); if (!res.ok) throw new Error("HTTP " + res.status); });
+  }
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+    tried = true;
+    var bad = validate();
+    if (bad) { $("bf-status").textContent = "Please fix the box marked in red."; bad.focus(); return; }
+    $("bf-status").textContent = "";
+    if ($("bf-bot").value) { showDone(); return; } // a spam robot filled the hidden box
+    if (!SITE.emailForm) { showText(false); return; }
+    var btn = $("bf-submit");
+    btn.disabled = true; $("bf-submit-label").textContent = photos.length ? "Sending your photos…" : "Sending…";
+    sendEmail().then(showDone, function () { showText(true); }).then(function () {
+      btn.disabled = false; $("bf-submit-label").textContent = "Send my request";
+    });
+  });
+
+  $("bf-back").addEventListener("click", function () {
+    $("bf-text").hidden = true; form.hidden = false;
+    form.scrollIntoView({ block: "start" }); $("bf-name").focus({ preventScroll: true });
+  });
+  $("bf-copy").addEventListener("click", function () {
+    var text = $("bf-msg").value, status = $("bf-copy-status");
+    function fallback() {
+      $("bf-msg-details").open = true;
+      $("bf-msg").focus(); $("bf-msg").select();
+      status.textContent = "Press and hold the message below, then choose Copy.";
+    }
+    try {
+      navigator.clipboard.writeText(text).then(function () {
+        status.textContent = "Copied. Paste it into a text or Facebook message to us.";
+      }, fallback);
+    } catch (err) { fallback(); }
+  });
+})();
+
+// Pine trees along the bottom of the hero
+(function () {
+  var g = $("pines"), html = "", x = -10, i = 0;
+  while (x < 1220) {
+    var s = 0.55 + ((i * 37) % 11) / 20; // repeatable sizes, no randomness
+    var h = 70 * s * 1.4, w = 40 * s * 1.4;
+    html += '<use href="#i-pine" x="' + x.toFixed(1) + '" y="' + (140 - h).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '"/>';
+    x += w * 0.62; i++;
+  }
+  g.innerHTML = html;
+})();
+
+// On phones, show a small price bar while the questions are on screen but the price card isn't
+(function () {
+  var bar = $("price-bar");
+  if (!("IntersectionObserver" in window)) return;
+  var formVisible = false, cardVisible = false;
+  function update() { bar.hidden = !(formVisible && !cardVisible); }
+  new IntersectionObserver(function (es) { formVisible = es[0].isIntersecting; update(); }, { threshold: 0 }).observe($("quote-form"));
+  new IntersectionObserver(function (es) { cardVisible = es[0].isIntersecting; update(); }, { threshold: 0.15 }).observe($("estimate"));
+})();
+
+syncInputs();
+render();
+</script>
+</body>
+</html>

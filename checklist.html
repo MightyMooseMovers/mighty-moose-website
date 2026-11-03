@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#17402F">
+<title>Moving Checklist · Mighty Moose Moving</title>
+<meta name="description" content="A free, week-by-week moving checklist for London, Ontario, from Mighty Moose Moving. Tick things off as you go.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bowlby+One&display=swap">
+<style>
+/* The same look as the home page: forest hero, plaid band, kraft box label for progress, then a week-by-week timeline of big tick boxes. */
+:root {
+  --bg: #F2F4EE; --surface: #FFFFFF; --ink: #15221B; --muted: #4A5950; --line: #CFD8CF;
+  --forest: #17402F; --forest-ink: #FFF6E4; --pine: #2B6A4B; --pine-soft: #E3EEE6;
+  --maple: #C3202E; --maple-dark: #9E1824; --maple-text: #C3202E; --on-maple: #FFFFFF;
+  --kraft: #F0DDBB; --kraft-edge: #C9975B; --kraft-ink: #3A2A15; --tape: rgba(255, 246, 228, 0.72);
+  --hero-far: #22533C; --hero-near: #0F2E21; --focus: #1D6FE0; --check: rgba(0, 0, 0, 0.42);
+  --shadow: 0 18px 40px -22px rgba(23, 64, 47, 0.45);
+  --font-display: "Bowlby One", "Arial Black", "Helvetica Neue", Impact, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", Verdana, Arial, sans-serif;
+  --step-0: 1.125rem; --step-1: 1.35rem; --step-2: 1.75rem;
+  --step-3: clamp(2rem, 4.2vw, 3rem); --step-4: clamp(2.3rem, 5.5vw, 3.9rem);
+  --radius: 14px;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1813; --surface: #14231B; --ink: #EDF2EB; --muted: #A9B8AE; --line: #2B3F33;
+    --forest: #0C2318; --forest-ink: #FFF6E4; --pine: #6FC497; --pine-soft: #1B3326;
+    --maple: #D8333F; --maple-dark: #B0222D; --maple-text: #FF8088; --on-maple: #FFFFFF;
+    --kraft: #2C2318; --kraft-edge: #8F6A3D; --kraft-ink: #F3E4C6; --tape: rgba(240, 221, 187, 0.16);
+    --hero-far: #143424; --hero-near: #08180F; --focus: #7FB2FF; --check: rgba(0, 0, 0, 0.5);
+    --shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1813; --surface: #14231B; --ink: #EDF2EB; --muted: #A9B8AE; --line: #2B3F33;
+  --forest: #0C2318; --forest-ink: #FFF6E4; --pine: #6FC497; --pine-soft: #1B3326;
+  --maple: #D8333F; --maple-dark: #B0222D; --maple-text: #FF8088; --on-maple: #FFFFFF;
+  --kraft: #2C2318; --kraft-edge: #8F6A3D; --kraft-ink: #F3E4C6; --tape: rgba(240, 221, 187, 0.16);
+  --hero-far: #143424; --hero-near: #08180F; --focus: #7FB2FF; --check: rgba(0, 0, 0, 0.5);
+  --shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body { margin: 0; background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: var(--step-0); line-height: 1.55; -webkit-font-smoothing: antialiased; }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.08; text-wrap: balance; margin: 0; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.95rem; }
+.num { font-variant-numeric: tabular-nums; }
+
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; min-height: 58px; padding: 0 26px; border-radius: 999px; border: 0; font: 700 var(--step-0)/1.1 var(--font-body); text-decoration: none; cursor: pointer; transition: transform .15s ease, background-color .15s ease; }
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn-red { background: var(--maple); color: var(--on-maple); }
+.btn-red:hover { background: var(--maple-dark); }
+.btn-ghost { background: transparent; color: var(--forest-ink); box-shadow: inset 0 0 0 2px var(--forest-ink); }
+.btn-ghost:hover { background: rgba(255, 246, 228, 0.12); }
+.btn-plain { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+.btn-plain:hover { box-shadow: inset 0 0 0 2px var(--pine); }
+
+.site-header { position: sticky; top: 0; z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); padding-top: env(safe-area-inset-top, 0px); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.brand img { width: 52px; height: auto; }
+.brand-name { font-family: var(--font-display); font-size: 1.25rem; line-height: 1; color: var(--ink); }
+.brand-name small { display: block; font-family: var(--font-body); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--maple-text); margin-top: 4px; }
+.top-nav { display: flex; gap: 4px; margin-left: auto; }
+.top-nav a { padding: 10px 14px; border-radius: 999px; font-weight: 700; text-decoration: none; color: var(--ink); }
+.top-nav a:hover, .top-nav a[aria-current] { background: var(--pine-soft); }
+@media (max-width: 900px) { .top-nav { display: none; } }
+.header-call { min-height: 50px; padding: 0 18px; }
+@media (max-width: 520px) { .brand-name { font-size: 1.05rem; } .header-call .long { display: none; } }
+
+.hero { background: var(--forest); color: var(--forest-ink); position: relative; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr); gap: 40px; align-items: center; padding-block: 48px 128px; position: relative; z-index: 1; }
+.hero h1 { font-size: var(--step-4); }
+.hero h1 em { font-style: normal; color: #FFD99A; }
+.hero .eyebrow { color: #F6B3A4; margin-bottom: 14px; }
+.hero .lead { margin-top: 18px; font-size: var(--step-1); max-width: 36ch; opacity: .95; }
+@media (max-width: 860px) { .hero .wrap { grid-template-columns: 1fr; padding-block: 32px 116px; gap: 28px; } }
+.forest-line { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 140px; display: block; }
+.forest-line .far { fill: var(--hero-far); }
+.forest-line .near { fill: var(--hero-near); }
+.plaid { height: 20px; background: repeating-linear-gradient(90deg, var(--check) 0 10px, transparent 10px 20px), repeating-linear-gradient(0deg, var(--check) 0 10px, transparent 10px 20px), var(--maple); }
+
+.progress-card { position: relative; background: var(--kraft); color: var(--kraft-ink); border: 2px solid var(--kraft-edge); border-radius: 6px; padding: 32px 24px 22px; box-shadow: var(--shadow); display: grid; gap: 12px; }
+.progress-card::before { content: ""; position: absolute; top: -14px; left: 50%; width: 140px; height: 30px; transform: translateX(-50%) rotate(-2deg); background: var(--tape); }
+.hero .progress-card .eyebrow { color: inherit; margin: 0; font-size: 0.9rem; border-bottom: 3px solid currentColor; padding-bottom: 10px; }
+.progress-big { font: 400 clamp(2rem, 6vw, 2.6rem)/1.05 var(--font-display); }
+.bar { height: 18px; border-radius: 999px; background: rgba(0, 0, 0, .12); overflow: hidden; border: 2px solid currentColor; }
+.bar span { display: block; height: 100%; width: 0; background: var(--pine); transition: width .3s ease; }
+.save-note { font-size: 1rem; }
+.pc-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.small-btn { min-height: 48px; padding: 0 18px; border-radius: 999px; border: 2px solid currentColor; background: transparent; color: inherit; font: 700 1rem var(--font-body); cursor: pointer; }
+.small-btn:hover { background: rgba(0, 0, 0, .06); }
+.small-btn.warn { background: var(--maple); border-color: var(--maple); color: var(--on-maple); }
+
+.jump { padding-block: 28px 8px; }
+.jump p { font-weight: 700; margin-bottom: 10px; }
+.jump ul { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.jump a { display: inline-flex; align-items: center; min-height: 48px; padding: 0 18px; border-radius: 999px; background: var(--surface); border: 2px solid var(--line); font-weight: 700; text-decoration: none; }
+.jump a:hover { border-color: var(--pine); }
+
+.timeline { padding-block: 8px 56px; }
+.group { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 32px; padding-block: 36px; border-top: 2px solid var(--line); }
+.group:first-child { border-top: 0; }
+.group-when { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 96px); align-self: start; display: grid; gap: 8px; }
+.when { font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 0.95rem; color: var(--maple-text); }
+.group-when h2 { font-size: var(--step-3); }
+.group-count { color: var(--muted); font-weight: 700; }
+.group-count.all { color: var(--pine); }
+@media (max-width: 860px) { .group { grid-template-columns: 1fr; gap: 18px; padding-block: 28px; } .group-when { position: static; } }
+.group-body { display: grid; gap: 16px; }
+.items { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.item { position: relative; }
+.item input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.item label { display: flex; gap: 16px; align-items: flex-start; min-height: 72px; padding: 16px 18px; border: 2px solid var(--line); border-radius: 12px; background: var(--surface); cursor: pointer; transition: background-color .15s ease, border-color .15s ease; }
+.item label:hover { border-color: var(--pine); }
+.item input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.box { flex: none; width: 34px; height: 34px; border-radius: 8px; border: 2px solid var(--pine); display: grid; place-items: center; color: transparent; background: var(--surface); margin-top: -2px; }
+.box svg { width: 22px; height: 22px; }
+.item input:checked + label { background: var(--pine-soft); border-color: transparent; }
+.item input:checked + label .box { background: var(--pine); color: var(--surface); }
+.item input:checked + label strong { text-decoration: line-through; text-decoration-thickness: 2px; text-decoration-color: var(--pine); }
+.txt { display: grid; gap: 4px; min-width: 0; }
+.txt strong { font-size: 1.15rem; line-height: 1.3; }
+.txt .sub { color: var(--muted); line-height: 1.45; }
+.tag { justify-self: start; padding: 2px 10px; border-radius: 999px; background: var(--forest); color: var(--forest-ink); font-size: 0.85rem; font-weight: 700; letter-spacing: 0.04em; }
+.item-link { display: inline-flex; align-items: center; gap: 6px; min-height: 44px; margin: 8px 0 0 68px; font-weight: 700; color: var(--maple-text); text-underline-offset: 4px; }
+@media (max-width: 520px) { .item-link { margin-left: 18px; } }
+.tip { display: flex; gap: 14px; align-items: center; padding: 14px 18px; border-radius: 12px; background: var(--kraft); color: var(--kraft-ink); border: 2px dashed var(--kraft-edge); }
+.tip img { flex: none; width: 44px; height: auto; }
+
+.cta { background: var(--forest); color: var(--forest-ink); }
+.cta .wrap { padding-block: 60px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.cta h2 { font-size: var(--step-3); max-width: 20ch; }
+.cta p { margin-top: 10px; font-size: var(--step-1); opacity: .95; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+footer.site-footer { background: var(--hero-near); color: var(--forest-ink); }
+footer.site-footer .wrap { padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; align-items: center; font-size: 1rem; }
+footer .brand-name { color: var(--forest-ink); }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.foot-links a { color: var(--forest-ink); font-weight: 700; text-underline-offset: 4px; }
+
+@media print {
+  :root { --bg: #fff; --surface: #fff; --ink: #000; --muted: #333; --line: #999; --pine: #000; --pine-soft: #fff; --kraft: #fff; --kraft-ink: #000; --forest: #fff; --forest-ink: #000; color-scheme: light; }
+  body { font-size: 12pt; }
+  .site-header, .jump, .pc-actions, .cta, .forest-line, .plaid, .item-link, .bar, .save-note, .tip img { display: none !important; }
+  .hero .wrap { padding-block: 0 12pt; display: block; }
+  .hero h1 em { color: #000; }
+  .hero .eyebrow { color: #000; }
+  .progress-card { box-shadow: none; border: 0; padding: 0; margin-top: 8pt; }
+  .progress-card::before { display: none; }
+  .group { display: block; padding-block: 10pt; break-inside: avoid; }
+  .group-when { position: static; margin-bottom: 6pt; }
+  .group-when h2 { font-size: 16pt; }
+  .item label { min-height: 0; padding: 6pt 8pt; border: 1px solid #999; }
+  .items { gap: 4pt; }
+  .tip { border: 1px dashed #999; padding: 6pt 8pt; }
+  footer.site-footer { background: #fff; color: #000; }
+  footer .brand-name, .foot-links a { color: #000; }
+}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 7 7L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8l9-4 9 4v9l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v9"/></g></symbol>
+    <symbol id="i-pine" viewBox="0 0 40 70"><path d="M20 0 L31 20 H25 L36 38 H28 L40 58 H23 V70 H17 V58 H0 L12 38 H4 L15 20 H9 Z"/></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Mighty Moose Moving, home page">
+      <img src="logo-sm.webp" alt="" width="52" height="53">
+      <span class="brand-name">Mighty Moose<small>Moving</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="./#quote">Free price</a>
+      <a href="./#book">Book a move</a>
+      <a href="checklist.html" aria-current="page">Moving checklist</a>
+    </nav>
+    <a class="btn btn-red header-call" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Call <span class="long num">(226) 637-0481</span></span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Free from Mighty Moose Moving</p>
+        <h1>Your moving <em>checklist.</em></h1>
+        <p class="lead">Everything to do, from two months out to your first night in the new place. Tap a line to tick it off.</p>
+      </div>
+      <div class="progress-card" aria-labelledby="pc-h">
+        <span class="eyebrow" id="pc-h">Your progress</span>
+        <p class="progress-big" id="progress-text" aria-live="polite"><span class="num" id="done-n">0</span> of 35 done</p>
+        <div class="bar" aria-hidden="true"><span id="bar-fill"></span></div>
+        <p class="save-note" id="save-note">Your ticks are saved on this phone or computer.</p>
+        <div class="pc-actions">
+          <button class="small-btn" type="button" id="print-btn" hidden>Print the list</button>
+          <button class="small-btn" type="button" id="clear-btn">Clear all ticks</button>
+        </div>
+      </div>
+    </div>
+    <svg class="forest-line" viewBox="0 0 1200 140" preserveAspectRatio="none" aria-hidden="true">
+      <path class="far" d="M0 140 V86 L120 54 L210 78 L330 28 L450 74 L560 48 L690 90 L820 34 L940 72 L1060 42 L1200 82 V140 Z"/>
+      <g class="near" id="pines"></g>
+      <rect class="near" x="0" y="128" width="1200" height="12"/>
+    </svg>
+  </section>
+  <div class="plaid" aria-hidden="true"></div>
+
+  <nav class="jump wrap" aria-labelledby="jump-h">
+    <p id="jump-h">Jump to:</p>
+    <ul>
+<li><a href="#w8">6 to 8 weeks before</a></li>
+<li><a href="#w4">4 weeks before</a></li>
+<li><a href="#w2">2 weeks before</a></li>
+<li><a href="#w1">1 week before</a></li>
+<li><a href="#d1">The day before</a></li>
+<li><a href="#d0">Moving day</a></li>
+<li><a href="#after">After you move</a></li>
+    </ul>
+  </nav>
+
+  <div class="timeline wrap">
+<section class="group" id="w8" aria-labelledby="w8-h">
+<div class="group-when">
+<p class="when">6 to 8 weeks before</p>
+<h2 id="w8-h">Plan and book</h2>
+<p class="group-count" data-group="w8"><span class="num">0</span> of 5 done</p>
+</div>
+<div class="group-body">
+<ul class="items">
+<li class="item"><input type="checkbox" id="c-price" value="price" data-group="w8"><label for="c-price"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Get your moving price</strong><span class="sub">Use our free price tool, then send us photos for one fixed price.</span></span></label><a class="item-link" href="./#quote">Get my free price <span aria-hidden="true">→</span></a></li>
+<li class="item"><input type="checkbox" id="c-book" value="book" data-group="w8"><label for="c-book"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Book your movers and your date</strong><span class="sub">Weekends and the last days of the month fill up first.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-n9" value="n9" data-group="w8"><label for="c-n9"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Renting? Give your landlord written notice</strong> <span class="tag">Ontario rule</span><span class="sub">In Ontario, tenants give 60 days&#x27; notice on Form N9. The date has to be the last day of a rental period.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-purge" value="purge" data-group="w8"><label for="c-purge"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Clear out what you don&#x27;t need</strong><span class="sub">Sell it, donate it or toss it. Less stuff means fewer hours and a smaller bill.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-supplies" value="supplies" data-group="w8"><label for="c-supplies"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Collect boxes and supplies</strong><span class="sub">Boxes, packing tape, a marker, and paper or towels for wrapping dishes.</span></span></label></li>
+</ul>
+<p class="tip"><img src="logo-sm.webp" alt="" width="44" height="45"><span><strong>Moose tip:</strong> A weekday move is often easier to book than a Saturday.</span></p>
+</div>
+</section>
+
+<section class="group" id="w4" aria-labelledby="w4-h">
+<div class="group-when">
+<p class="when">4 weeks before</p>
+<h2 id="w4-h">Start packing</h2>
+<p class="group-count" data-group="w4"><span class="num">0</span> of 6 done</p>
+</div>
+<div class="group-body">
+<ul class="items">
+<li class="item"><input type="checkbox" id="c-rarely" value="rarely" data-group="w4"><label for="c-rarely"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Pack the things you rarely use</strong><span class="sub">Off-season clothes, books, decorations and the spare room.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-label" value="label" data-group="w4"><label for="c-label"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Label every box</strong><span class="sub">Write the room and what&#x27;s inside on the side of the box, not just the top.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-measure" value="measure" data-group="w4"><label for="c-measure"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Measure your big furniture</strong><span class="sub">Check that the couch, bed and dresser fit through the doors and up the stairs at the new place.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-elevator" value="elevator" data-group="w4"><label for="c-elevator"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Book the elevator or loading dock</strong><span class="sub">Ask both buildings. Some need a time slot or a deposit.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-parking" value="parking" data-group="w4"><label for="c-parking"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Save a spot for the truck</strong><span class="sub">Plan where a big truck can park close to the door at both places.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-mail" value="mail" data-group="w4"><label for="c-mail"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Forward your mail</strong><span class="sub">Set up mail forwarding with Canada Post so nothing gets lost.</span></span></label></li>
+</ul>
+<p class="tip"><img src="logo-sm.webp" alt="" width="44" height="45"><span><strong>Moose tip:</strong> Heavy things like books go in small boxes. Light things like pillows go in big ones.</span></p>
+</div>
+</section>
+
+<section class="group" id="w2" aria-labelledby="w2-h">
+<div class="group-when">
+<p class="when">2 weeks before</p>
+<h2 id="w2-h">Sort out the details</h2>
+<p class="group-count" data-group="w2"><span class="num">0</span> of 5 done</p>
+</div>
+<div class="group-body">
+<ul class="items">
+<li class="item"><input type="checkbox" id="c-utilities" value="utilities" data-group="w2"><label for="c-utilities"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Move your utilities</strong> <span class="tag">London</span><span class="sub">Set stop and start dates. In London, London Hydro handles electricity and water, and Enbridge Gas handles gas.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-internet" value="internet" data-group="w2"><label for="c-internet"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Book internet for the new place</strong><span class="sub">Installers can be booked up, so call early.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-food" value="food" data-group="w2"><label for="c-food"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Eat up the freezer and pantry</strong><span class="sub">Less food to pack, and less to throw out.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-confirm" value="confirm" data-group="w2"><label for="c-confirm"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Confirm moving day with us</strong><span class="sub">We&#x27;ll check the time, both addresses and anything that changed.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-care" value="care" data-group="w2"><label for="c-care"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Plan for kids and pets</strong><span class="sub">A friend or sitter on moving day keeps everyone safe and calm.</span></span></label></li>
+</ul>
+</div>
+</section>
+
+<section class="group" id="w1" aria-labelledby="w1-h">
+<div class="group-when">
+<p class="when">1 week before</p>
+<h2 id="w1-h">Pack most of it</h2>
+<p class="group-count" data-group="w1"><span class="num">0</span> of 4 done</p>
+</div>
+<div class="group-body">
+<ul class="items">
+<li class="item"><input type="checkbox" id="c-packmost" value="packmost" data-group="w1"><label for="c-packmost"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Pack most of the house</strong><span class="sub">Leave out a few dishes, clothes and towels for the last days.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-apart" value="apart" data-group="w1"><label for="c-apart"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Take apart what you can</strong><span class="sub">Bed frames, table legs and shelves. Or ask us to do it on moving day.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-cables" value="cables" data-group="w1"><label for="c-cables"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Take photos of your TV and computer cables</strong><span class="sub">Then plugging everything back in is easy.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-firstnight" value="firstnight" data-group="w1"><label for="c-firstnight"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Pack a first-night box</strong><span class="sub">Sheets, towels, toilet paper, phone chargers, medicine, snacks and a kettle.</span></span></label></li>
+</ul>
+<p class="tip"><img src="logo-sm.webp" alt="" width="44" height="45"><span><strong>Moose tip:</strong> Put screws and bolts in a zip bag and tape it to the furniture they came from.</span></p>
+</div>
+</section>
+
+<section class="group" id="d1" aria-labelledby="d1-h">
+<div class="group-when">
+<p class="when">The day before</p>
+<h2 id="d1-h">Get ready</h2>
+<p class="group-count" data-group="d1"><span class="num">0</span> of 5 done</p>
+</div>
+<div class="group-body">
+<ul class="items">
+<li class="item"><input type="checkbox" id="c-fridge" value="fridge" data-group="d1"><label for="c-fridge"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Empty and defrost the fridge and freezer</strong><span class="sub">Start early, because it can take hours. Leave the doors open so they dry.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-drawers" value="drawers" data-group="d1"><label for="c-drawers"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Empty your dresser drawers</strong><span class="sub">Full drawers make a dresser too heavy to carry safely.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-valuables" value="valuables" data-group="d1"><label for="c-valuables"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Keep valuables with you</strong><span class="sub">Jewellery, passports, important papers and cash ride with you, not in the truck.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-charge" value="charge" data-group="d1"><label for="c-charge"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Charge your phone</strong><span class="sub">We&#x27;ll text you on moving day.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-payment" value="payment" data-group="d1"><label for="c-payment"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Get your payment ready</strong><span class="sub">The rest of the price is paid when the move is done, by e-transfer, card or cash.</span></span></label></li>
+</ul>
+</div>
+</section>
+
+<section class="group" id="d0" aria-labelledby="d0-h">
+<div class="group-when">
+<p class="when">Moving day</p>
+<h2 id="d0-h">The big day</h2>
+<p class="group-count" data-group="d0"><span class="num">0</span> of 6 done</p>
+</div>
+<div class="group-body">
+<ul class="items">
+<li class="item"><input type="checkbox" id="c-ontheway" value="ontheway" data-group="d0"><label for="c-ontheway"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Watch for our text</strong><span class="sub">We text you when we&#x27;re on the way.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-walk" value="walk" data-group="d0"><label for="c-walk"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Walk through with the crew</strong><span class="sub">Show us what&#x27;s going, what&#x27;s staying, and anything fragile.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-rooms" value="rooms" data-group="d0"><label for="c-rooms"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Take photos of the empty rooms</strong><span class="sub">Handy if there&#x27;s ever a question about how you left the place.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-lastcheck" value="lastcheck" data-group="d0"><label for="c-lastcheck"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Do a last check</strong><span class="sub">Closets, cupboards, the basement, the garage and behind doors.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-arrived" value="arrived" data-group="d0"><label for="c-arrived"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Check that everything arrived</strong><span class="sub">Look things over at the new place before the crew leaves.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-keys" value="keys" data-group="d0"><label for="c-keys"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Lock up and hand over the keys</strong></span></label></li>
+</ul>
+<p class="tip"><img src="logo-sm.webp" alt="" width="44" height="45"><span><strong>Moose tip:</strong> Keep a clear path from the door to the truck. It makes the whole day faster.</span></p>
+</div>
+</section>
+
+<section class="group" id="after" aria-labelledby="after-h">
+<div class="group-when">
+<p class="when">After you move</p>
+<h2 id="after-h">Settle in</h2>
+<p class="group-count" data-group="after"><span class="num">0</span> of 4 done</p>
+</div>
+<div class="group-body">
+<ul class="items">
+<li class="item"><input type="checkbox" id="c-serviceon" value="serviceon" data-group="after"><label for="c-serviceon"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Change your address with ServiceOntario</strong> <span class="tag">Ontario rule</span><span class="sub">Driver&#x27;s licence and vehicle permit within 6 days, health card within 30 days. You can do them all online.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-others" value="others" data-group="after"><label for="c-others"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Tell everyone else</strong><span class="sub">The CRA, your bank, work, insurance, doctor and dentist.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-beds" value="beds" data-group="after"><label for="c-beds"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Make the beds first</strong><span class="sub">You&#x27;ll be glad you did at 10 p.m.</span></span></label></li>
+<li class="item"><input type="checkbox" id="c-howdid" value="howdid" data-group="after"><label for="c-howdid"><span class="box" aria-hidden="true"><svg><use href="#i-check"/></svg></span><span class="txt"><strong>Tell us how we did</strong><span class="sub">Text us. And if you were happy, tell a friend.</span></span></label></li>
+</ul>
+</div>
+</section>
+  </div>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div>
+        <h2 id="cta-h">Let the Moose do the heavy lifting.</h2>
+        <p>Get your free moving price in about a minute.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-red" href="./#quote"><svg aria-hidden="true"><use href="#i-box"/></svg>Get my free price</a>
+        <a class="btn btn-ghost" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">(226) 637-0481</span></a>
+      </div>
+    </div>
+  </section>
+  <div class="plaid" aria-hidden="true"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="brand-name">Mighty Moose Moving</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="./#quote">Free price</a>
+      <a href="./#book">Book a move</a>
+      <a href="checklist.html">Moving checklist</a>
+    </nav>
+    <span>London, Ontario · <span class="num">(226) 637-0481</span></span>
+    <span>© 2026 Mighty Moose Moving</span>
+  </div>
+</footer>
+
+<script>
+var SITE = { canPrint: true }; // true on your own web address, where printing works
+(function () {
+  var KEY = "mm-checklist-v1", TOTAL = 35;
+  var boxes = Array.prototype.slice.call(document.querySelectorAll(".item input"));
+  var saved = [], canSave = true;
+  try {
+    saved = JSON.parse(localStorage.getItem(KEY) || "[]");
+    localStorage.setItem(KEY + "-t", "1"); localStorage.removeItem(KEY + "-t");
+  } catch (e) { canSave = false; }
+  if (!Array.isArray(saved)) saved = [];
+  boxes.forEach(function (b) { b.checked = saved.indexOf(b.value) > -1; });
+  if (!canSave) document.getElementById("save-note").textContent = "This browser won't save your ticks, so they'll clear if you leave the page.";
+
+  function update(save) {
+    var done = boxes.filter(function (b) { return b.checked; });
+    document.getElementById("done-n").textContent = done.length;
+    document.getElementById("bar-fill").style.width = (done.length / TOTAL * 100) + "%";
+    if (done.length === TOTAL) document.getElementById("progress-text").textContent = "All done. Welcome home!";
+    else document.getElementById("progress-text").innerHTML = '<span class="num" id="done-n">' + done.length + '</span> of ' + TOTAL + ' done';
+    Array.prototype.forEach.call(document.querySelectorAll(".group-count"), function (el) {
+      var g = el.getAttribute("data-group");
+      var all = boxes.filter(function (b) { return b.getAttribute("data-group") === g; });
+      var n = all.filter(function (b) { return b.checked; }).length;
+      el.classList.toggle("all", n === all.length);
+      el.innerHTML = n === all.length ? "All done ✓" : '<span class="num">' + n + "</span> of " + all.length + " done";
+    });
+    if (save && canSave) {
+      try { localStorage.setItem(KEY, JSON.stringify(done.map(function (b) { return b.value; }))); } catch (e) {}
+    }
+  }
+  document.querySelector(".timeline").addEventListener("change", function () { update(true); });
+
+  var clearBtn = document.getElementById("clear-btn"), armed = null;
+  clearBtn.addEventListener("click", function () {
+    if (!armed) {
+      clearBtn.textContent = "Tap again to clear them all"; clearBtn.classList.add("warn");
+      armed = setTimeout(function () { armed = null; clearBtn.textContent = "Clear all ticks"; clearBtn.classList.remove("warn"); }, 4000);
+      return;
+    }
+    clearTimeout(armed); armed = null;
+    boxes.forEach(function (b) { b.checked = false; });
+    clearBtn.textContent = "Clear all ticks"; clearBtn.classList.remove("warn");
+    update(true);
+  });
+  if (SITE.canPrint) {
+    var pb = document.getElementById("print-btn");
+    pb.hidden = false;
+    pb.addEventListener("click", function () { window.print(); });
+  }
+
+  // Pine trees along the bottom of the hero
+  var g = document.getElementById("pines"), out = "", x = -10, i = 0;
+  while (x < 1220) {
+    var s = 0.5 + ((i * 37) % 11) / 22, h = 70 * s * 1.3, w = 40 * s * 1.3;
+    out += '<use href="#i-pine" x="' + x.toFixed(1) + '" y="' + (130 - h).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '"/>';
+    x += w * 0.62; i++;
+  }
+  g.innerHTML = out;
+
+  update(false);
+})();
+</script>
+</body>
+</html>
