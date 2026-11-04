@@ -184,8 +184,18 @@ footer .brand-name { color: var(--forest-ink); }
   footer .brand-name, .foot-links a { color: #000; }
 }
 </style>
+<!-- Meta Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init','2195425464719237');
+fbq('track','PageView');
+// Taps on a Call or Text button count as a Contact
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href^="sms:"]');if(a)fbq('track','Contact',{content_category:a.getAttribute('href').slice(0,3)==='tel'?'Call':'Text'});},true);
+</script>
+<!-- End Meta Pixel -->
 </head>
 <body>
+<noscript><img height="1" width="1" style="display:none" alt="" src="https://www.facebook.com/tr?id=2195425464719237&amp;ev=PageView&amp;noscript=1"></noscript>
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 7 7L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
@@ -402,6 +412,7 @@ footer .brand-name { color: var(--forest-ink); }
     </nav>
     <span>London, Ontario · <span class="num">(226) 637-0481</span></span>
     <span>© 2026 Mighty Moose Moving</span>
+    <span>We use the Meta pixel to measure our ads.</span>
   </div>
 </footer>
 
