@@ -1,0 +1,623 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<link rel="icon" type="image/png" sizes="64x64" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="theme-color" content="#17402F">
+<link rel="canonical" href="https://mightymoosemovers.ca/junk-removal.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Mighty Moose Moving">
+<meta property="og:url" content="https://mightymoosemovers.ca/junk-removal.html">
+<meta property="og:title" content="Junk Removal in London, Ontario · Mighty Moose Moving">
+<meta property="og:description" content="Furniture, appliances and clutter hauled away. Good furniture donated. Get your price in about a minute. Minimum $75.">
+<meta property="og:image" content="https://mightymoosemovers.ca/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mighty Moose Moving logo: a moose in a plaid shirt giving two thumbs up">
+<meta name="twitter:card" content="summary_large_image">
+<title>Junk Removal · Mighty Moose Moving</title>
+<meta name="description" content="Junk removal in London, Ontario. Furniture, appliances, mattresses and clutter hauled away, and good furniture donated. Get your price in about a minute. Minimum price $75.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bowlby+One&display=swap">
+<style>
+/* Layout: a forest-green hero with the moose, a plaid band, then the price tool styled as a kraft moving-box label, followed by plain, big-type sections. */
+:root {
+  --bg: #F2F4EE;
+  --surface: #FFFFFF;
+  --ink: #15221B;
+  --muted: #4A5950;
+  --line: #CFD8CF;
+  --forest: #17402F;
+  --forest-ink: #FFF6E4;
+  --pine: #2B6A4B;
+  --pine-soft: #E3EEE6;
+  --maple: #C3202E;
+  --maple-dark: #9E1824; --maple-text: #C3202E;
+  --on-maple: #FFFFFF;
+  --kraft: #F0DDBB;
+  --kraft-edge: #C9975B;
+  --kraft-ink: #3A2A15;
+  --tape: rgba(255, 246, 228, 0.72);
+  --hero-far: #22533C;
+  --hero-near: #0F2E21;
+  --focus: #1D6FE0;
+  --error: #B51C29;
+  --check: rgba(0, 0, 0, 0.42);
+  --shadow: 0 18px 40px -22px rgba(23, 64, 47, 0.45);
+
+  --font-display: "Bowlby One", "Arial Black", "Helvetica Neue", Impact, sans-serif;
+  --font-body: "Atkinson Hyperlegible", "Segoe UI", Verdana, Arial, sans-serif;
+
+  --step-0: 1.125rem;   /* 18px body */
+  --step-1: 1.35rem;
+  --step-2: 1.75rem;
+  --step-3: clamp(2rem, 4.2vw, 3rem);
+  --step-4: clamp(2.4rem, 6vw, 4.25rem);
+  --radius: 14px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0D1813; --surface: #14231B; --ink: #EDF2EB; --muted: #A9B8AE; --line: #2B3F33;
+    --forest: #0C2318; --forest-ink: #FFF6E4; --pine: #6FC497; --pine-soft: #1B3326;
+    --maple: #D8333F; --maple-dark: #B0222D; --maple-text: #FF8088; --on-maple: #FFFFFF;
+    --kraft: #2C2318; --kraft-edge: #8F6A3D; --kraft-ink: #F3E4C6; --tape: rgba(240, 221, 187, 0.16);
+    --hero-far: #143424; --hero-near: #08180F; --focus: #7FB2FF; --error: #FF8A8F; --check: rgba(0, 0, 0, 0.5);
+    --shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0D1813; --surface: #14231B; --ink: #EDF2EB; --muted: #A9B8AE; --line: #2B3F33;
+  --forest: #0C2318; --forest-ink: #FFF6E4; --pine: #6FC497; --pine-soft: #1B3326;
+  --maple: #D8333F; --maple-dark: #B0222D; --maple-text: #FF8088; --on-maple: #FFFFFF;
+  --kraft: #2C2318; --kraft-edge: #8F6A3D; --kraft-ink: #F3E4C6; --tape: rgba(240, 221, 187, 0.16);
+  --hero-far: #143424; --hero-near: #08180F; --focus: #7FB2FF; --error: #FF8A8F; --check: rgba(0, 0, 0, 0.5);
+  --shadow: 0 18px 40px -22px rgba(0, 0, 0, 0.8);
+  color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: var(--font-body); font-size: var(--step-0); line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--surface); }
+h1, h2, h3 { font-family: var(--font-display); font-weight: 400; line-height: 1.08; text-wrap: balance; margin: 0; letter-spacing: 0.005em; }
+p { margin: 0; }
+a { color: inherit; }
+:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 6px; }
+.wrap { max-width: 1160px; margin-inline: auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+.eyebrow { font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; font-size: 0.95rem; }
+.lead { font-size: var(--step-1); max-width: 34ch; }
+.num { font-variant-numeric: tabular-nums; }
+
+/* Buttons */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+  min-height: 58px; padding: 0 26px; border-radius: 999px; border: 0;
+  font: 700 var(--step-0)/1.1 var(--font-body); text-decoration: none; cursor: pointer;
+  transition: transform .15s ease, background-color .15s ease;
+}
+.btn:active { transform: translateY(1px); }
+.btn svg { width: 22px; height: 22px; flex: none; }
+.btn-red { background: var(--maple); color: var(--on-maple); }
+.btn-red:hover { background: var(--maple-dark); }
+.btn-ghost { background: transparent; color: var(--forest-ink); box-shadow: inset 0 0 0 2px var(--forest-ink); }
+.btn-ghost:hover { background: rgba(255, 246, 228, 0.12); }
+.btn-forest { background: var(--forest); color: var(--forest-ink); }
+.btn-forest:hover { filter: brightness(1.15); }
+.btn-plain { background: var(--surface); color: var(--ink); box-shadow: inset 0 0 0 2px var(--line); }
+.btn-plain:hover { box-shadow: inset 0 0 0 2px var(--pine); }
+
+/* Header */
+.site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 20; background: var(--surface); border-bottom: 1px solid var(--line); }
+.site-header .wrap { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-block: 10px; }
+.brand { display: flex; align-items: center; gap: 12px; text-decoration: none; min-width: 0; }
+.brand img { width: 52px; height: auto; }
+.brand-name { font-family: var(--font-display); font-size: 1.25rem; line-height: 1; color: var(--ink); }
+.brand-name small { display: block; font-family: var(--font-body); font-weight: 700; font-size: 0.8rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--maple-text); margin-top: 4px; }
+.header-call { min-height: 50px; padding: 0 18px; }
+.header-call .long { display: inline; }
+@media (max-width: 520px) { .brand-name { font-size: 1.05rem; } .header-call .long { display: none; } }
+
+/* Hero */
+.hero { background: var(--forest); color: var(--forest-ink); position: relative; overflow: hidden; }
+.hero .wrap { display: grid; grid-template-columns: minmax(0, 1.5fr) minmax(0, 0.7fr); gap: 32px; align-items: center; padding-block: 56px 132px; position: relative; z-index: 1; }
+.hero h1 { font-size: var(--step-4); }
+.hero h1 em { font-style: normal; color: #FFD99A; }
+.hero .eyebrow { color: #F6B3A4; margin-bottom: 14px; }
+.hero .lead { margin-top: 18px; opacity: 0.95; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 14px; margin-top: 28px; }
+.hero-facts { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 28px 0 0; padding: 0; list-style: none; font-weight: 700; }
+.hero-facts li { display: flex; align-items: center; gap: 8px; }
+.hero-facts svg { width: 20px; height: 20px; color: #FFD99A; flex: none; }
+.hero-logo { justify-self: center; width: min(290px, 100%); height: auto; filter: drop-shadow(0 18px 24px rgba(0,0,0,.35)); }
+.forest-line { position: absolute; left: 0; right: 0; bottom: 0; width: 100%; height: 150px; display: block; }
+.forest-line .far { fill: var(--hero-far); }
+.forest-line .near { fill: var(--hero-near); }
+@media (max-width: 860px) {
+  .hero .wrap { grid-template-columns: 1fr; padding-block: 28px 120px; gap: 8px; }
+  .hero-logo { order: -1; justify-self: start; width: 120px; margin-bottom: 10px; }
+}
+
+/* Buffalo plaid band, from the moose's shirt */
+.plaid { height: 20px; background:
+  repeating-linear-gradient(90deg, var(--check) 0 10px, transparent 10px 20px),
+  repeating-linear-gradient(0deg, var(--check) 0 10px, transparent 10px 20px),
+  var(--maple); }
+
+/* Section rhythm */
+section.band { padding-block: 72px; }
+section.band .wrap > header { display: grid; gap: 12px; margin-bottom: 36px; max-width: 760px; }
+section.band h2 { font-size: var(--step-3); }
+section.band header p { color: var(--muted); font-size: var(--step-1); }
+.alt { background: var(--surface); border-block: 1px solid var(--line); }
+
+/* Quote tool */
+.quote-grid { display: grid; grid-template-columns: minmax(0, 1fr) 390px; gap: 32px; align-items: start; }
+@media (max-width: 960px) { .quote-grid { grid-template-columns: 1fr; } }
+.questions { display: grid; gap: 22px; }
+fieldset.q { margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--surface); min-width: 0; }
+.q legend { padding: 0; float: left; width: 100%; display: flex; gap: 14px; align-items: baseline; margin-bottom: 6px; }
+.q legend + * { clear: both; }
+.q-num { flex: none; display: inline-grid; place-items: center; width: 38px; height: 38px; border-radius: 50%; background: var(--pine); color: var(--surface); font: 400 1.05rem/1 var(--font-display); transform: translateY(4px); }
+.q-title { font-family: var(--font-display); font-size: var(--step-2); line-height: 1.15; }
+.q-hint { color: var(--muted); margin: 4px 0 16px 52px; }
+@media (max-width: 520px) { .q-hint { margin-left: 0; } fieldset.q { padding: 18px; } }
+.choices { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.choices.list { grid-template-columns: 1fr; }
+@media (max-width: 600px) { .choices { grid-template-columns: 1fr; } }
+.choice { position: relative; }
+.choice input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.choice label {
+  display: flex; align-items: center; gap: 14px; min-height: 72px; height: 100%;
+  padding: 14px 16px; border-radius: 12px; cursor: pointer;
+  border: 2px solid var(--line); background: var(--surface);
+  transition: border-color .15s ease, background-color .15s ease;
+}
+.choice label:hover { border-color: var(--pine); }
+.choice input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.choice input:checked + label { border-color: var(--pine); background: var(--pine-soft); box-shadow: inset 0 0 0 1px var(--pine); }
+.choice .ico { flex: none; width: 46px; height: 40px; color: var(--pine); display: grid; place-items: center; }
+.choice .ico svg { width: 100%; height: 100%; }
+.choice .txt { display: grid; gap: 2px; min-width: 0; }
+.choice strong { font-size: 1.1rem; line-height: 1.2; }
+.choice .txt span { color: var(--muted); font-size: 0.98rem; line-height: 1.3; }
+.choice .tick { margin-left: auto; flex: none; width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--line); display: grid; place-items: center; color: transparent; }
+.choice input[type="checkbox"] + label .tick { border-radius: 7px; }
+.choice input:checked + label .tick { background: var(--pine); border-color: var(--pine); color: var(--surface); }
+.choice .tick svg { width: 16px; height: 16px; }
+.rec { display: none; margin-left: 8px; padding: 2px 10px; border-radius: 999px; background: var(--forest); color: var(--forest-ink); font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em; vertical-align: 2px; white-space: nowrap; }
+.choice.is-rec .rec { display: inline-block; }
+.choice .txt .rec { color: var(--forest-ink); font-size: 0.8rem; line-height: 1.5; }
+.note { margin-top: 14px; padding: 12px 14px; border-radius: 10px; background: var(--pine-soft); font-weight: 700; }
+
+.stepper { display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; padding: 14px 16px; border: 2px solid var(--line); border-radius: 12px; margin-top: 12px; }
+.stepper .txt { display: grid; gap: 2px; min-width: 0; flex: 1 1 220px; }
+.stepper .txt span { color: var(--muted); font-size: 0.98rem; }
+.count { display: flex; align-items: center; gap: 10px; }
+.count button { width: 52px; height: 52px; border-radius: 50%; border: 2px solid var(--pine); background: var(--surface); color: var(--pine); font: 700 1.6rem/1 var(--font-body); cursor: pointer; }
+.count button:disabled { opacity: .35; cursor: default; }
+.count output { min-width: 2ch; text-align: center; font: 400 1.6rem/1 var(--font-display); }
+
+/* Estimate card: a kraft box label */
+.estimate { position: sticky; top: calc(env(safe-area-inset-top, 0px) + 92px); }
+@media (max-width: 960px) { .estimate { position: static; } }
+.label-card {
+  position: relative; background: var(--kraft); color: var(--kraft-ink);
+  border: 2px solid var(--kraft-edge); border-radius: 6px; padding: 34px 24px 24px; box-shadow: var(--shadow);
+}
+.label-card::before { /* packing tape */
+  content: ""; position: absolute; top: -14px; left: 50%; width: 150px; height: 30px; transform: translateX(-50%) rotate(-2deg);
+  background: var(--tape); border-left: 2px dashed rgba(0,0,0,.08); border-right: 2px dashed rgba(0,0,0,.08);
+}
+.label-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; border-bottom: 3px solid currentColor; padding-bottom: 10px; }
+.label-top .eyebrow { font-size: 0.9rem; }
+.arrows { display: flex; gap: 4px; }
+.arrows svg { width: 18px; height: 22px; }
+.price { font: 400 clamp(2.2rem, 7vw, 2.9rem)/1.05 var(--font-display); margin: 18px 0 4px; font-variant-numeric: tabular-nums; }
+.price-sub { font-weight: 700; }
+.deposit { margin-top: 14px; padding: 12px 14px; border: 2px dashed currentColor; border-radius: 8px; display: flex; justify-content: space-between; gap: 10px; flex-wrap: wrap; font-weight: 700; }
+.deposit .dep-pay { flex-basis: 100%; font-weight: 400; font-size: 0.98rem; }
+.included { margin: 18px 0 0; padding: 0; list-style: none; display: grid; gap: 8px; }
+.included li { display: flex; gap: 10px; align-items: flex-start; }
+.included svg { flex: none; width: 20px; height: 20px; margin-top: 3px; }
+.fine { margin-top: 14px; font-size: 0.98rem; }
+.custom-msg { margin: 18px 0 4px; font: 400 var(--step-2)/1.15 var(--font-display); }
+.send { margin-top: 18px; padding-top: 18px; border-top: 3px solid currentColor; display: grid; gap: 12px; }
+.send h3 { font-size: 1.2rem; }
+.field { display: grid; gap: 6px; }
+.field label { font-weight: 700; }
+.field input { min-height: 52px; padding: 0 14px; border-radius: 10px; border: 2px solid var(--kraft-edge); background: var(--surface); color: var(--ink); font: 400 var(--step-0) var(--font-body); width: 100%; }
+.send .btn { width: 100%; }
+.phone-line { text-align: center; font-weight: 700; }
+.phone-line .big { display: block; font: 400 1.6rem/1.2 var(--font-display); user-select: all; }
+.copy-status { min-height: 1.5em; text-align: center; font-weight: 700; }
+.msg-box { width: 100%; min-height: 150px; border-radius: 10px; border: 2px solid var(--kraft-edge); background: var(--surface); color: var(--ink); font: 400 1rem/1.45 var(--font-body); padding: 10px; }
+details.show-msg summary { cursor: pointer; font-weight: 700; padding: 6px 0; }
+
+/* Mobile price bar */
+.price-bar { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; background: var(--forest); color: var(--forest-ink);
+  padding: 10px max(16px, env(safe-area-inset-right, 0px)) calc(10px + env(safe-area-inset-bottom, 0px)) max(16px, env(safe-area-inset-left, 0px));
+  display: flex; align-items: center; justify-content: space-between; gap: 12px; box-shadow: 0 -10px 30px -12px rgba(0,0,0,.5); }
+.price-bar strong { font: 400 1.3rem/1.1 var(--font-display); font-variant-numeric: tabular-nums; }
+.price-bar small { display: block; font-size: 0.85rem; opacity: .85; }
+.price-bar .btn { min-height: 50px; padding: 0 20px; }
+@media (min-width: 961px) { .price-bar { display: none !important; } }
+
+/* Steps */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 18px; counter-reset: s; }
+.steps li { counter-increment: s; display: grid; gap: 8px; align-content: start; padding-top: 18px; border-top: 4px solid var(--pine); }
+.steps li::before { content: counter(s); font: 400 2.2rem/1 var(--font-display); color: var(--maple-text); }
+.steps strong { font-size: 1.15rem; }
+.steps span { color: var(--muted); }
+@media (max-width: 960px) { .steps { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .steps { grid-template-columns: 1fr; } }
+
+/* Promises + services */
+.promises { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; }
+.promise { display: grid; gap: 10px; align-content: start; }
+.promise .badge { width: 60px; height: 60px; border-radius: 16px; background: var(--forest); color: #FFD99A; display: grid; place-items: center; }
+.promise .badge svg { width: 32px; height: 32px; }
+.promise h3 { font-size: 1.3rem; }
+.promise p { color: var(--muted); }
+@media (max-width: 960px) { .promises { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 520px) { .promises { grid-template-columns: 1fr; } }
+.services { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--line); }
+.service { padding: 22px 22px 22px 0; border-bottom: 2px solid var(--line); display: grid; gap: 6px; }
+.service h3 { font-size: 1.25rem; }
+.service p { color: var(--muted); }
+@media (max-width: 860px) { .services { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .services { grid-template-columns: 1fr; } }
+
+.area { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px; align-items: center; }
+.towns { display: flex; flex-wrap: wrap; gap: 10px; padding: 0; margin: 0; list-style: none; }
+.towns li { padding: 10px 16px; border-radius: 999px; background: var(--pine-soft); font-weight: 700; }
+.towns li.home { background: var(--forest); color: var(--forest-ink); }
+@media (max-width: 860px) { .area { grid-template-columns: 1fr; } }
+
+/* FAQ */
+.faq { display: grid; gap: 12px; max-width: 860px; }
+.faq details { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; }
+.faq summary { list-style: none; cursor: pointer; padding: 20px 56px 20px 22px; font-weight: 700; font-size: 1.15rem; position: relative; min-height: 64px; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; position: absolute; right: 22px; top: 50%; transform: translateY(-50%); font: 400 1.6rem/1 var(--font-display); color: var(--maple-text); }
+.faq details[open] summary::after { content: "–"; }
+.faq details p { padding: 0 22px 20px; color: var(--muted); max-width: 65ch; }
+
+/* Closing CTA + footer */
+.cta { background: var(--forest); color: var(--forest-ink); }
+.cta .wrap { padding-block: 64px; display: flex; flex-wrap: wrap; gap: 24px; align-items: center; justify-content: space-between; }
+.cta h2 { font-size: var(--step-3); max-width: 18ch; }
+.cta p { margin-top: 10px; font-size: var(--step-1); opacity: .95; }
+.cta-actions { display: flex; flex-wrap: wrap; gap: 14px; }
+footer.site-footer { background: var(--hero-near); color: var(--forest-ink); }
+footer.site-footer .wrap { padding-block: 28px calc(28px + env(safe-area-inset-bottom, 0px)); display: flex; flex-wrap: wrap; gap: 12px 28px; justify-content: space-between; align-items: center; font-size: 1rem; }
+footer .brand-name { color: var(--forest-ink); }
+@media (max-width: 960px) { footer.site-footer .wrap { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); } }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 20px; }
+.foot-links a { color: var(--forest-ink); font-weight: 700; text-underline-offset: 4px; }
+
+/* Header links (wide screens) */
+.top-nav { display: flex; gap: 4px; margin-left: auto; }
+.top-nav a { padding: 10px 14px; border-radius: 999px; font-weight: 700; text-decoration: none; color: var(--ink); }
+.top-nav a:hover { background: var(--pine-soft); }
+@media (max-width: 1080px) { .top-nav { display: none; } }
+
+/* Booking request form */
+.book-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 32px; align-items: start; }
+@media (max-width: 960px) { .book-grid { grid-template-columns: 1fr; } }
+.book-form { display: grid; gap: 22px; }
+.bf-group { margin: 0; padding: 24px; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg); display: grid; gap: 18px; min-width: 0; }
+@media (max-width: 520px) { .bf-group { padding: 18px; } }
+.bf-group > legend { float: left; width: 100%; padding: 0; font: 400 var(--step-2)/1.15 var(--font-display); }
+.opt { font-family: var(--font-body); font-size: 1rem; font-weight: 400; color: var(--muted); letter-spacing: 0; }
+.bf-field { display: grid; gap: 6px; min-width: 0; }
+.bf-field > label { font-weight: 700; font-size: 1.1rem; }
+.bf-input { width: 100%; min-height: 56px; padding: 12px 14px; border-radius: 10px; border: 2px solid var(--line); background: var(--surface); color: var(--ink); font: 400 var(--step-0)/1.4 var(--font-body); }
+.bf-input::placeholder { color: var(--muted); opacity: .8; }
+.bf-input:hover { border-color: var(--pine); }
+.bf-input:focus { border-color: var(--pine); }
+textarea.bf-input { min-height: 130px; resize: vertical; }
+.bf-input[aria-invalid="true"] { border-color: var(--error); box-shadow: inset 0 0 0 1px var(--error); }
+.bf-error { color: var(--error); font-weight: 700; }
+.bf-help { color: var(--muted); }
+.bf-row { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 12px 24px; align-items: end; }
+@media (max-width: 600px) { .bf-row { grid-template-columns: 1fr; } }
+.bf-check { display: flex; align-items: center; gap: 12px; min-height: 56px; font-weight: 700; cursor: pointer; }
+.bf-check input { width: 28px; height: 28px; margin: 0; accent-color: var(--pine); flex: none; cursor: pointer; }
+.bf-sub { border: 0; margin: 0; padding: 0; min-width: 0; }
+.bf-sub legend { padding: 0; margin-bottom: 8px; font-weight: 700; font-size: 1.1rem; }
+.pills { display: flex; flex-wrap: wrap; gap: 10px; }
+.pill { position: relative; }
+.pill input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.pill label { display: inline-flex; align-items: center; gap: 8px; min-height: 52px; padding: 0 20px; border-radius: 999px; border: 2px solid var(--line); background: var(--surface); font-weight: 700; cursor: pointer; }
+.pill label:hover { border-color: var(--pine); }
+.pill label svg { width: 20px; height: 20px; color: var(--pine); }
+.pill input:checked + label { border-color: var(--pine); background: var(--pine-soft); box-shadow: inset 0 0 0 1px var(--pine); }
+.pill input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+.photo-add { display: flex; align-items: center; justify-content: center; gap: 12px; min-height: 96px; padding: 14px; border: 2px dashed var(--pine); border-radius: 12px; background: var(--surface); color: var(--pine); font-weight: 700; font-size: 1.15rem; cursor: pointer; text-align: center; }
+.photo-add:hover { background: var(--pine-soft); }
+.photo-add svg { width: 30px; height: 30px; flex: none; }
+#bf-picker:focus-visible + .photo-add { outline: 3px solid var(--focus); outline-offset: 2px; }
+.thumbs { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 10px; }
+.thumbs:empty { display: none; }
+.thumbs li { position: relative; aspect-ratio: 1; border-radius: 10px; overflow: hidden; background: var(--line); }
+.thumbs img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.thumbs button { position: absolute; top: 6px; right: 6px; width: 40px; height: 40px; border-radius: 50%; border: 2px solid #fff; background: rgba(0, 0, 0, .72); color: #fff; font: 700 1.3rem/1 var(--font-body); cursor: pointer; }
+.bf-estimate { display: grid; gap: 4px; padding: 18px 20px; background: var(--kraft); color: var(--kraft-ink); border: 2px solid var(--kraft-edge); border-radius: 8px; }
+.bf-estimate .eyebrow { font-size: 0.85rem; }
+.bf-estimate strong { font: 400 1.75rem/1.15 var(--font-display); font-variant-numeric: tabular-nums; }
+.bf-estimate a { font-weight: 700; justify-self: start; margin-top: 4px; text-underline-offset: 4px; }
+.bf-submit { width: 100%; min-height: 66px; font-size: 1.25rem; }
+.bf-submit[disabled] { opacity: .7; cursor: progress; }
+.bf-status { text-align: center; font-weight: 700; color: var(--error); }
+.bf-status:empty { display: none; }
+.bf-privacy { text-align: center; color: var(--muted); font-size: 1rem; margin-top: -8px; }
+.hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+.bf-panel { display: grid; gap: 14px; justify-items: center; text-align: center; padding: 36px 24px; border: 2px solid var(--pine); border-radius: var(--radius); background: var(--bg); }
+.bf-panel:focus { outline: none; }
+.bf-panel h3 { font-size: var(--step-2); }
+.bf-panel > p { max-width: 46ch; }
+.bf-panel .btn { width: min(100%, 420px); }
+.bf-panel details { width: min(100%, 520px); text-align: left; }
+.bf-panel .msg-box { border-color: var(--line); }
+.big-check { width: 76px; height: 76px; border-radius: 50%; background: var(--pine); color: var(--surface); display: grid; place-items: center; }
+.big-check svg { width: 42px; height: 42px; }
+.link-btn { background: none; border: 0; color: var(--ink); font: 700 1rem var(--font-body); text-decoration: underline; text-underline-offset: 4px; cursor: pointer; min-height: 48px; padding: 0 12px; }
+.book-side { display: grid; gap: 18px; position: sticky; top: calc(env(safe-area-inset-top, 0px) + 92px); }
+@media (max-width: 960px) { .book-side { position: static; } }
+.side-card { display: grid; gap: 10px; padding: 24px; border-radius: var(--radius); background: var(--forest); color: var(--forest-ink); }
+.side-card h3 { font-size: 1.4rem; }
+.side-card .big { font: 400 1.7rem/1.2 var(--font-display); user-select: all; }
+.side-card .btn { width: 100%; margin-top: 6px; }
+.side-card.kraft { background: var(--kraft); color: var(--kraft-ink); border: 2px solid var(--kraft-edge); }
+.faq details p a { color: var(--ink); font-weight: 700; text-underline-offset: 4px; }
+/* Moving / Junk removal switch on the price tool */
+.svc-switch { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; max-width: 560px; margin: -8px 0 28px; padding: 6px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.svc { position: relative; }
+.svc input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.svc label { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 12px; border-radius: 999px; font-weight: 700; font-size: 1.1rem; cursor: pointer; color: var(--ink); text-align: center; }
+.svc label svg { width: 22px; height: 22px; flex: none; }
+.svc label:hover { background: var(--pine-soft); }
+.svc input:checked + label { background: var(--pine); color: var(--surface); }
+.svc input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (max-width: 480px) { .svc label { gap: 7px; padding: 0 8px; font-size: 1rem; white-space: nowrap; } .svc label svg { width: 18px; height: 18px; } }
+.service a { color: var(--ink); font-weight: 700; text-underline-offset: 4px; }
+
+/* Junk Removal page */
+.take { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--line); }
+.take div { padding: 20px 22px 20px 0; border-bottom: 2px solid var(--line); display: grid; gap: 6px; }
+.take h3 { font-size: 1.2rem; }
+.take p { color: var(--muted); }
+@media (max-width: 860px) { .take { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .take { grid-template-columns: 1fr; } }
+.cant { margin-top: 22px; padding: 14px 18px; border-radius: 12px; background: var(--pine-soft); font-weight: 700; max-width: 760px; }
+.flow { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; counter-reset: f; }
+.flow div { display: grid; gap: 10px; align-content: start; padding: 24px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--line); }
+.flow .badge { width: 60px; height: 60px; border-radius: 16px; background: var(--forest); color: #FFD99A; display: grid; place-items: center; }
+.flow .badge svg { width: 32px; height: 32px; }
+.flow h3 { font-size: 1.35rem; }
+.flow p { color: var(--muted); }
+@media (max-width: 860px) { .flow { grid-template-columns: 1fr; } }
+.steps.four { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+@media (max-width: 960px) { .steps.four { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 560px) { .steps.four { grid-template-columns: 1fr; } }
+.top-nav a[aria-current] { background: var(--pine-soft); }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-phone" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 3h3l2 5-2.5 1.5a11 11 0 0 0 7 7L16 14l5 2v3a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></symbol>
+    <symbol id="i-text" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M4 5h16v11H9l-5 4z"/></symbol>
+    <symbol id="i-copy" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="8" y="8" width="12" height="12" rx="2"/><path d="M16 8V5a1 1 0 0 0-1-1H5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h3"/></g></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" d="M5 12.5l4.5 4.5L19 7"/></symbol>
+    <symbol id="i-box" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8l9-4 9 4v9l-9 4-9-4z"/><path d="M3 8l9 4 9-4M12 12v9"/></g></symbol>
+    <symbol id="i-up" viewBox="0 0 18 22"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="M9 20V3M3 9l6-6 6 6"/></symbol>
+    <symbol id="i-camera" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><path d="M3 8h4l2-3h6l2 3h4v11H3z"/><circle cx="12" cy="13" r="3.5"/></g></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></g></symbol>
+    <symbol id="i-transfer" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 8h15l-4-4M20 16H5l4 4"/></symbol>
+    <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></g></symbol>
+    <symbol id="i-cash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v4M18 10v4"/></g></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></g></symbol>
+    <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></g></symbol>
+    <symbol id="i-pine" viewBox="0 0 40 70"><path d="M20 0 L31 20 H25 L36 38 H28 L40 58 H23 V70 H17 V58 H0 L12 38 H4 L15 20 H9 Z"/></symbol>
+
+    <symbol id="i-heart" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round" d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></symbol>
+    <symbol id="i-recycle" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 0 1-13.66 5.66M4 12a8 8 0 0 1 13.66-5.66"/><path d="M18 2.5v4h-4M6 21.5v-4h4"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="./" aria-label="Mighty Moose Moving, home page">
+      <img src="logo-sm.webp" alt="" width="52" height="53">
+      <span class="brand-name">Mighty Moose<small>Moving</small></span>
+    </a>
+    <nav class="top-nav" aria-label="Main">
+      <a href="./#quote">Free price</a>
+      <a href="junk-removal.html" aria-current="page">Junk removal</a>
+      <a href="./#book">Book</a>
+      <a href="checklist.html">Moving checklist</a>
+    </nav>
+    <a class="btn btn-red header-call" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Call <span class="long num">(226) 637-0481</span></span></a>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <p class="eyebrow">Junk removal in London, Ontario</p>
+        <h1>We haul it <em>all away.</em></h1>
+        <p class="lead">Furniture, appliances, mattresses and clutter, gone in one visit. Get your price in about a minute.</p>
+        <div class="hero-actions">
+          <a class="btn btn-red" href="#junk-price"><svg aria-hidden="true"><use href="#i-trash"/></svg>Get my junk price</a>
+          <a class="btn btn-ghost" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">(226) 637-0481</span></a>
+        </div>
+        <ul class="hero-facts">
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>We take almost everything</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Good furniture gets donated</li>
+          <li><svg aria-hidden="true"><use href="#i-check"/></svg>Minimum price $75</li>
+        </ul>
+      </div>
+      <img class="hero-logo" src="logo.webp" width="720" height="733" alt="Mighty Moose Moving logo: a moose in a red plaid shirt and Canada cap giving two thumbs up beside moving boxes">
+    </div>
+    <svg class="forest-line" viewBox="0 0 1200 150" preserveAspectRatio="none" aria-hidden="true">
+      <path class="far" d="M0 150 V92 L120 58 L210 84 L330 30 L450 80 L560 52 L690 96 L820 36 L940 78 L1060 46 L1200 88 V150 Z"/>
+      <g class="near" id="pines"></g>
+      <rect class="near" x="0" y="138" width="1200" height="12"/>
+    </svg>
+  </section>
+  <div class="plaid" aria-hidden="true"></div>
+
+  <section class="band" id="junk-price" aria-labelledby="price-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">Free price, right now</p>
+        <h2 id="price-h">What will junk removal cost?</h2>
+        <p>Tap your answers below. The price updates as you go.</p>
+      </header>
+      <div class="quote-grid">
+        <form class="questions" id="junk-form" novalidate></form>
+        <aside class="estimate" id="junk-estimate" aria-label="Your junk removal price"></aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" aria-labelledby="take-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">What we take</p>
+        <h2 id="take-h">Almost everything</h2>
+      </header>
+      <div class="take">
+        <div><h3>Furniture</h3><p>Couches, sectionals, beds, dressers, tables and chairs.</p></div>
+        <div><h3>Mattresses</h3><p>Mattresses and box springs, any size.</p></div>
+        <div><h3>Appliances</h3><p>Fridges, freezers, washers, dryers, stoves and dishwashers.</p></div>
+        <div><h3>TVs and electronics</h3><p>Old TVs, computers, printers and stereos.</p></div>
+        <div><h3>Exercise equipment</h3><p>Treadmills, bikes, benches and weights.</p></div>
+        <div><h3>Boxes and clutter</h3><p>Bags, boxes and everything that piled up.</p></div>
+        <div><h3>Outdoor stuff</h3><p>BBQs, patio furniture, playsets and hot tub covers.</p></div>
+        <div><h3>Clean-outs</h3><p>Garages, basements, sheds and whole homes.</p></div>
+        <div><h3>Renovation waste</h3><p>Drywall, lumber and flooring. Send photos for a price.</p></div>
+      </div>
+      <p class="cant">The only things we can't take are paint, propane tanks, chemicals and asbestos.</p>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="where-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">Where your stuff goes</p>
+        <h2 id="where-h">The landfill is the last stop, not the first</h2>
+      </header>
+      <div class="flow">
+        <div><span class="badge" aria-hidden="true"><svg><use href="#i-heart"/></svg></span><h3>Donated</h3><p>Good, usable furniture goes to local charities so someone else can use it.</p></div>
+        <div><span class="badge" aria-hidden="true"><svg><use href="#i-recycle"/></svg></span><h3>Recycled</h3><p>Metal and appliances go to a local recycler. Fridges and freezers go where the refrigerant can be removed safely.</p></div>
+        <div><span class="badge" aria-hidden="true"><svg><use href="#i-trash"/></svg></span><h3>Landfill, last</h3><p>Only what's left goes to the City of London landfill.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="band alt" aria-labelledby="how-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">How it works</p>
+        <h2 id="how-h">Four steps and it's gone</h2>
+      </header>
+      <ol class="steps four">
+        <li><strong>Get your price here</strong><span>Answer four quick questions above.</span></li>
+        <li><strong>Send us photos</strong><span>Add them to your request, or text them to us. We confirm one fixed price.</span></li>
+        <li><strong>Hold your date</strong><span>Pay a 30% deposit by e-transfer, card or cash.</span></li>
+        <li><strong>We haul it away</strong><span>We do all the lifting and loading. You pay the rest when it's gone.</span></li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="band" aria-labelledby="faq-h">
+    <div class="wrap">
+      <header>
+        <p class="eyebrow" style="color: var(--maple-text)">Questions</p>
+        <h2 id="faq-h">Good to know</h2>
+      </header>
+      <div class="faq">
+        <details><summary>What's the minimum price?</summary><p>$75. Small single items start there. The price tool above shows the price for your job.</p></details>
+        <details><summary>How do you set the price?</summary><p>By how much space your junk takes in our trailer, how easy it is to reach, and how far away you are. Fridges, freezers and air conditioners have a $35 fee each because they need special handling. Send photos and we'll confirm one fixed price.</p></details>
+        <details><summary>What can't you take?</summary><p>Paint, propane tanks, chemicals and asbestos. The City of London's household special waste depot takes paint and chemicals.</p></details>
+        <details><summary>Do you donate furniture?</summary><p>Yes. If it's in good shape, it goes to a local charity instead of the landfill.</p></details>
+        <details><summary>How do I pay?</summary><p>E-transfer, card or cash. A 30% deposit holds your date, and the rest is paid when the job is done. Cancel 72 hours or more before and you get your deposit back.</p></details>
+        <details><summary>Are you moving too?</summary><p>We do both. <a href="./#quote">Get a moving price</a>, and add junk removal to the same visit.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta" aria-labelledby="cta-h">
+    <div class="wrap">
+      <div>
+        <h2 id="cta-h">Got junk? Let the Moose haul it.</h2>
+        <p>Call or text <span class="num">(226) 637-0481</span>. A real person answers.</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn btn-red" href="#junk-price"><svg aria-hidden="true"><use href="#i-trash"/></svg>Get my junk price</a>
+        <a class="btn btn-ghost" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg>Call now</a>
+      </div>
+    </div>
+  </section>
+  <div class="plaid" aria-hidden="true"></div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span class="brand-name">Mighty Moose Moving</span>
+    <nav class="foot-links" aria-label="Footer">
+      <a href="./#quote">Free price</a>
+      <a href="junk-removal.html">Junk removal</a>
+      <a href="./#book">Book</a>
+      <a href="checklist.html">Moving checklist</a>
+    </nav>
+    <span>London, Ontario · <span class="num">(226) 637-0481</span></span>
+    <span>© 2026 Mighty Moose Moving</span>
+  </div>
+</footer>
+
+<div class="price-bar" id="price-bar" hidden>
+  <div><small>Your price</small><strong id="bar-price"></strong></div>
+  <a class="btn btn-red" href="#junk-estimate">See details</a>
+</div>
+
+<script src="junk.js"></script>
+<script>
+(function () {
+  function $(id) { return document.getElementById(id); }
+  MMJunk.mount({
+    prefix: "jk", questions: $("junk-form"), card: $("junk-estimate"), state: MMJunk.saved() || MMJunk.DEFAULTS,
+    // Booking happens on the home page's form, with these answers already filled in
+    bookHref: function (s) { return "./?junk=" + MMJunk.encode(s) + "#book"; },
+    onChange: function (r) { $("bar-price").textContent = r.custom ? "Custom price" : MMJunk.money(r.price); }
+  });
+  var g = $("pines"), html = "", x = -10, i = 0;
+  while (x < 1220) {
+    var s = 0.55 + ((i * 37) % 11) / 20, h = 70 * s * 1.4, w = 40 * s * 1.4;
+    html += '<use href="#i-pine" x="' + x.toFixed(1) + '" y="' + (140 - h).toFixed(1) + '" width="' + w.toFixed(1) + '" height="' + h.toFixed(1) + '"/>';
+    x += w * 0.62; i++;
+  }
+  g.innerHTML = html;
+  if (!("IntersectionObserver" in window)) return;
+  var bar = $("price-bar"), vis = {};
+  function update() { bar.hidden = !(vis.f && !vis.c); }
+  new IntersectionObserver(function (es) { vis.f = es[0].isIntersecting; update(); }, { threshold: 0 }).observe($("junk-form"));
+  new IntersectionObserver(function (es) { vis.c = es[0].isIntersecting; update(); }, { threshold: 0.15 }).observe($("junk-estimate"));
+})();
+</script>
+</body>
+</html>

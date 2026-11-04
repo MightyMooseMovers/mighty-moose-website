@@ -11,14 +11,14 @@
 <meta property="og:site_name" content="Mighty Moose Moving">
 <meta property="og:url" content="https://mightymoosemovers.ca/">
 <meta property="og:title" content="Mighty Moose Moving · London, Ontario">
-<meta property="og:description" content="Local movers in London, Ontario. Get a free moving price in about a minute.">
+<meta property="og:description" content="Local movers and junk removal in London, Ontario. Get a free price in about a minute.">
 <meta property="og:image" content="https://mightymoosemovers.ca/og-image.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Mighty Moose Moving logo: a moose in a plaid shirt giving two thumbs up">
 <meta name="twitter:card" content="summary_large_image">
 <title>Mighty Moose Moving</title>
-<meta name="description" content="Local movers in London, Ontario. Get a free moving price in about a minute.">
+<meta name="description" content="Local movers and junk removal in London, Ontario. Get a free moving or junk removal price in about a minute.">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"MovingCompany","url":"https://mightymoosemovers.ca/","image":"https://mightymoosemovers.ca/og-image.jpg","name":"Mighty Moose Moving","telephone":"+1-226-637-0481","address":{"@type":"PostalAddress","addressLocality":"London","addressRegion":"ON","addressCountry":"CA"},"areaServed":["London ON","St. Thomas ON","Strathroy ON","Komoka ON","Ilderton ON","Dorchester ON","Lucan ON","Belmont ON","Thorndale ON"],"paymentAccepted":"E-transfer, Credit Card, Cash"}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -311,7 +311,7 @@ footer .brand-name { color: var(--forest-ink); }
 .top-nav { display: flex; gap: 4px; margin-left: auto; }
 .top-nav a { padding: 10px 14px; border-radius: 999px; font-weight: 700; text-decoration: none; color: var(--ink); }
 .top-nav a:hover { background: var(--pine-soft); }
-@media (max-width: 900px) { .top-nav { display: none; } }
+@media (max-width: 1080px) { .top-nav { display: none; } }
 
 /* Booking request form */
 .book-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 32px; align-items: start; }
@@ -382,6 +382,17 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
 .side-card .btn { width: 100%; margin-top: 6px; }
 .side-card.kraft { background: var(--kraft); color: var(--kraft-ink); border: 2px solid var(--kraft-edge); }
 .faq details p a { color: var(--ink); font-weight: 700; text-underline-offset: 4px; }
+/* Moving / Junk removal switch on the price tool */
+.svc-switch { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; max-width: 560px; margin: -8px 0 28px; padding: 6px; border-radius: 999px; background: var(--surface); border: 1px solid var(--line); }
+.svc { position: relative; }
+.svc input { position: absolute; opacity: 0; width: 1px; height: 1px; }
+.svc label { display: flex; align-items: center; justify-content: center; gap: 10px; min-height: 56px; padding: 0 12px; border-radius: 999px; font-weight: 700; font-size: 1.1rem; cursor: pointer; color: var(--ink); text-align: center; }
+.svc label svg { width: 22px; height: 22px; flex: none; }
+.svc label:hover { background: var(--pine-soft); }
+.svc input:checked + label { background: var(--pine); color: var(--surface); }
+.svc input:focus-visible + label { outline: 3px solid var(--focus); outline-offset: 2px; }
+@media (max-width: 480px) { .svc label { gap: 7px; padding: 0 8px; font-size: 1rem; white-space: nowrap; } .svc label svg { width: 18px; height: 18px; } }
+.service a { color: var(--ink); font-weight: 700; text-underline-offset: 4px; }
 </style>
 </head>
 <body>
@@ -398,6 +409,7 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
     <symbol id="i-transfer" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M4 8h15l-4-4M20 16H5l4 4"/></symbol>
     <symbol id="i-card" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 10h18M7 15h4"/></g></symbol>
     <symbol id="i-cash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"><rect x="2" y="6" width="20" height="12" rx="2"/><circle cx="12" cy="12" r="2.5"/><path d="M6 10v4M18 10v4"/></g></symbol>
+    <symbol id="i-trash" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 7h16M9 7V4h6v3M6 7l1 13h10l1-13M10 11v6M14 11v6"/></g></symbol>
     <symbol id="i-list" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 6l1.5 1.5L8 5M4 12l1.5 1.5L8 11M4 18l1.5 1.5L8 17M11 6h9M11 12h9M11 18h9"/></g></symbol>
     <symbol id="i-pine" viewBox="0 0 40 70"><path d="M20 0 L31 20 H25 L36 38 H28 L40 58 H23 V70 H17 V58 H0 L12 38 H4 L15 20 H9 Z"/></symbol>
   </defs>
@@ -411,7 +423,8 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
     </a>
     <nav class="top-nav" aria-label="Main">
       <a href="#quote">Free price</a>
-      <a href="#book">Book a move</a>
+      <a href="junk-removal.html">Junk removal</a>
+      <a href="#book">Book</a>
       <a href="checklist.html">Moving checklist</a>
     </nav>
     <a class="btn btn-red header-call" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span>Call <span class="long num">(226) 637-0481</span></span></a>
@@ -422,9 +435,9 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
   <section class="hero">
     <div class="wrap">
       <div>
-        <p class="eyebrow">Local movers in London, Ontario</p>
+        <p class="eyebrow">Moving and junk removal in London, Ontario</p>
         <h1>Let the Moose do the <em>heavy lifting.</em></h1>
-        <p class="lead">Get a free moving price in about a minute. No sign-up, no email, no pressure.</p>
+        <p class="lead">Get a free moving or junk removal price in about a minute. No sign-up, no email, no pressure.</p>
         <div class="hero-actions">
           <a class="btn btn-red" href="#quote"><svg aria-hidden="true"><use href="#i-box"/></svg>Get my free price</a>
           <a class="btn btn-ghost" href="tel:+12266370481"><svg aria-hidden="true"><use href="#i-phone"/></svg><span class="num">(226) 637-0481</span></a>
@@ -453,7 +466,12 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
         <p>Tap your answers below. The price updates as you go. We filled in the most common answers to start, so just change what's different.</p>
       </header>
 
-      <div class="quote-grid">
+      <div class="svc-switch" id="svc-switch" role="radiogroup" aria-label="What do you need a price for?">
+        <span class="svc"><input type="radio" name="svc" id="svc-moving" value="moving" checked><label for="svc-moving"><svg aria-hidden="true"><use href="#i-box"/></svg>Moving</label></span>
+        <span class="svc"><input type="radio" name="svc" id="svc-junk" value="junk"><label for="svc-junk"><svg aria-hidden="true"><use href="#i-trash"/></svg>Junk removal</label></span>
+      </div>
+
+      <div class="quote-grid" id="moving-tool">
         <form class="questions" id="quote-form" novalidate>
           <fieldset class="q">
             <legend><span class="q-num">1</span><span class="q-title">What are you moving?</span></legend>
@@ -528,13 +546,18 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
           </div>
         </aside>
       </div>
+
+      <div class="quote-grid" id="junk-tool" hidden>
+        <form class="questions" id="junk-form" novalidate></form>
+        <aside class="estimate" id="junk-estimate" aria-label="Your junk removal price"></aside>
+      </div>
     </div>
   </section>
 
   <section class="band alt" id="book" aria-labelledby="book-h">
     <div class="wrap">
       <header>
-        <p class="eyebrow" style="color: var(--maple-text)">Book your move</p>
+        <p class="eyebrow" style="color: var(--maple-text)">Book with us</p>
         <h2 id="book-h">Ask for your fixed price</h2>
         <p>Fill this in and we'll get back to you with one fixed price in writing. Only your name and phone number are needed.</p>
       </header>
@@ -545,6 +568,7 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
             <input type="hidden" name="form-name" value="booking">
             <input type="hidden" name="subject" id="bf-subject" value="New moving request">
             <input type="hidden" name="estimate" id="bf-estimate-field" value="">
+            <input type="hidden" name="service" id="bf-service" value="Moving">
             <p class="hp" aria-hidden="true"><label>Leave this empty <input name="bot-field" id="bf-bot" tabindex="-1" autocomplete="off"></label></p>
             <div hidden><input type="file" name="photo1"><input type="file" name="photo2"><input type="file" name="photo3"><input type="file" name="photo4"></div>
 
@@ -576,19 +600,19 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
             </fieldset>
 
             <fieldset class="bf-group">
-              <legend>Your move</legend>
+              <legend id="bf-job-legend">Your move</legend>
               <div class="bf-row">
                 <div class="bf-field">
-                  <label for="bf-date">Moving date <span class="opt">(optional)</span></label>
+                  <label for="bf-date"><span id="bf-date-word">Moving date</span> <span class="opt">(optional)</span></label>
                   <input class="bf-input" id="bf-date" name="move_date" type="date">
                 </div>
                 <label class="bf-check"><input type="checkbox" id="bf-flex" name="date_flexible" value="Yes">My date is flexible</label>
               </div>
               <div class="bf-field">
-                <label for="bf-from">Moving from <span class="opt">(optional)</span></label>
+                <label for="bf-from"><span id="bf-from-word">Moving from</span> <span class="opt">(optional)</span></label>
                 <input class="bf-input" id="bf-from" name="from" type="text" autocomplete="street-address" placeholder="Street address, or just the area">
               </div>
-              <div class="bf-field">
+              <div class="bf-field" id="bf-to-field">
                 <label for="bf-to">Moving to <span class="opt">(optional)</span></label>
                 <input class="bf-input" id="bf-to" name="to" type="text" placeholder="Street address, or just the town">
               </div>
@@ -610,7 +634,7 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
             <fieldset class="bf-group" id="bf-photos">
               <legend>Photos <span class="opt">(optional)</span></legend>
               <div id="bf-photo-tools">
-                <p class="bf-help" style="margin-bottom: 14px;">Photos of your big furniture help us give you an exact price. You can add up to 4.</p>
+                <p class="bf-help" style="margin-bottom: 14px;">Photos of your big furniture or your junk help us give you an exact price. You can add up to 4.</p>
                 <input type="file" id="bf-picker" class="visually-hidden" accept="image/*" multiple>
                 <label for="bf-picker" class="photo-add" id="bf-add"><svg aria-hidden="true"><use href="#i-camera"/></svg><span id="bf-add-label">Add photos</span></label>
                 <ul class="thumbs" id="bf-thumbs" aria-label="Photos you added" style="margin-top: 14px;"></ul>
@@ -636,7 +660,7 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
 
             <button class="btn btn-red bf-submit" type="submit" id="bf-submit"><svg aria-hidden="true"><use href="#i-mail"/></svg><span id="bf-submit-label">Send my request</span></button>
             <p class="bf-status" id="bf-status" role="status" aria-live="polite"></p>
-            <p class="bf-privacy">We only use your details to plan your move.</p>
+            <p class="bf-privacy">We only use your details to plan your job.</p>
           </form>
 
           <div class="bf-panel" id="bf-done" hidden tabindex="-1" aria-labelledby="bf-done-h">
@@ -714,8 +738,8 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
   <section class="band" aria-labelledby="svc-h">
     <div class="wrap">
       <header>
-        <p class="eyebrow" style="color: var(--maple-text)">What we move</p>
-        <h2 id="svc-h">Big moves, small moves, single items</h2>
+        <p class="eyebrow" style="color: var(--maple-text)">What we do</p>
+        <h2 id="svc-h">Moves of every size, and the junk you don't want</h2>
       </header>
       <div class="services">
         <div class="service"><h3>Apartments and condos</h3><p>Elevator bookings, stairs and tight hallways handled.</p></div>
@@ -724,6 +748,9 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
         <div class="service"><h3>Loading help</h3><p>Got your own truck or pod? We load it or unload it.</p></div>
         <div class="service"><h3>Furniture pickup</h3><p>Bought something on Marketplace or Kijiji? We'll bring it home.</p></div>
         <div class="service"><h3>Small offices</h3><p>Desks, files and equipment, moved after hours if you need.</p></div>
+        <div class="service"><h3>Junk removal</h3><p>Furniture, mattresses and clutter hauled away. Good furniture gets donated. <a href="junk-removal.html">Get a junk price</a></p></div>
+        <div class="service"><h3>Garage and basement clean-outs</h3><p>We clear it out and load it up. You don't lift a thing.</p></div>
+        <div class="service"><h3>Appliance removal</h3><p>Old fridges, washers and stoves taken away and recycled.</p></div>
       </div>
     </div>
   </section>
@@ -752,6 +779,7 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
         <details><summary>How do you set the final price?</summary><p>Send us a few photos or a short video of what's moving. We reply with one fixed price in writing. That's the price for the job we agreed on, even if moving day runs long.</p></details>
         <details><summary>How does the deposit work?</summary><p>To hold your date, you pay 30% of the price. The rest is paid when the move is done. Cancel 72 hours or more before your move and you get your deposit back.</p></details>
         <details><summary>How do I pay?</summary><p>E-transfer, card or cash. That goes for the deposit and for the rest of the price on moving day.</p></details>
+        <details><summary>Do you do junk removal too?</summary><p>Yes. We haul away furniture, appliances, mattresses and clutter, and we donate good furniture. The minimum price is $75. <a href="junk-removal.html">Get a junk removal price</a>.</p></details>
         <details><summary>Is there anything you don't move?</summary><p>We don't move pianos, safes or hot tubs, or anything dangerous like propane, gasoline or paint.</p></details>
         <details><summary>What should I do before moving day?</summary><p>Pack and tape your boxes (or ask for packing help), empty your dresser drawers, and book the elevator if your building needs it. Our <a href="checklist.html">free moving checklist</a> has the full list, week by week.</p></details>
       </div>
@@ -778,7 +806,8 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
     <span class="brand-name">Mighty Moose Moving</span>
     <nav class="foot-links" aria-label="Footer">
       <a href="#quote">Free price</a>
-      <a href="#book">Book a move</a>
+      <a href="junk-removal.html">Junk removal</a>
+      <a href="#book">Book</a>
       <a href="checklist.html">Moving checklist</a>
     </nav>
     <span>London, Ontario · <span class="num">(226) 637-0481</span></span>
@@ -788,9 +817,10 @@ textarea.bf-input { min-height: 130px; resize: vertical; }
 
 <div class="price-bar" id="price-bar" hidden>
   <div><small>Your price</small><strong id="bar-price">$749</strong></div>
-  <a class="btn btn-red" href="#estimate">See details</a>
+  <a class="btn btn-red" id="bar-link" href="#estimate">See details</a>
 </div>
 
+<script src="junk.js"></script>
 <script>
 /* ---------- Website settings ---------- */
 var SITE = {
@@ -846,10 +876,11 @@ var STAIRS = [
 var EXTRAS = [
   { id: "assembly", label: "Take apart furniture", sub: "Beds, tables, shelves, and we put them back together" },
   { id: "packing", label: "Packing help", sub: "We bring boxes and tape and pack for you" },
-  { id: "special", label: "Piano, safe or hot tub", sub: "These need a look first" }
+  { id: "special", label: "Piano, safe or hot tub", sub: "These need a look first" },
+  { id: "junk", label: "Haul away stuff you don't want", sub: "We take your junk too and price it from your photos. Minimum $75." }
 ];
 
-var state = { size: "one", movers: 0, dist: "d15", stairs: "none", assembly: false, packing: false, special: false, heavy: 0 }; // movers 0 = the crew we suggest
+var state = { size: "one", movers: 0, dist: "d15", stairs: "none", assembly: false, packing: false, special: false, junk: false, heavy: 0 }; // movers 0 = the crew we suggest
 try { var saved = JSON.parse(localStorage.getItem("mm-quote") || "null"); if (saved && typeof saved === "object") { for (var k in state) if (k in saved) state[k] = saved[k]; } } catch (e) {}
 if ([0, 2, 3, 4].indexOf(state.movers) < 0) state.movers = 0;
 
@@ -953,7 +984,6 @@ function render() {
     $("custom-why").textContent = r.reason === "special"
       ? "Pianos, safes and hot tubs need special gear, so we'd like to hear about it first. Call or text us."
       : "Moves over 100 km get a custom price. Call or text us and we'll work it out with you.";
-    $("bar-price").textContent = "Custom price";
   } else {
     $("est-price").textContent = money(r.price);
     $("est-summary").textContent = summaryBits.join(" · ");
@@ -964,16 +994,16 @@ function render() {
     if (state.packing) lines.push("Packing, with boxes and tape");
     if (state.assembly) lines.push("Taking apart and rebuilding furniture");
     if (state.heavy) lines.push(state.heavy + " heavy item" + (state.heavy > 1 ? "s" : ""));
+    if (state.junk) lines.push("Junk removal too, priced from your photos");
     $("est-included").innerHTML = lines.map(li).join("");
-    $("bar-price").textContent = money(r.price);
   }
 
   // Keep the booking form's copy of the estimate in step
   lastQuote = r;
   $("book-cta").textContent = r.custom ? "Ask for a custom price" : "Book this price";
   $("book-cta-h").textContent = r.custom ? "Tell us about it" : "Like this price?";
-  $("bf-est-price").textContent = r.custom ? "Custom price" : money(r.price);
-  $("bf-est-sum").textContent = summaryBits.join(" · ");
+  lastSummary = summaryBits.join(" · ");
+  updateShared();
   try { localStorage.setItem("mm-quote", JSON.stringify(state)); } catch (e) {}
 }
 function capital(s) { return s.charAt(0).toUpperCase() + s.slice(1); }
@@ -986,6 +1016,7 @@ function moveLines(r) {
   if (state.assembly) extras.push("furniture taken apart");
   if (state.heavy) extras.push(state.heavy + " heavy item" + (state.heavy > 1 ? "s" : ""));
   if (state.special) extras.push("piano, safe or hot tub");
+  if (state.junk) extras.push("junk removal too");
   var lines = ["Moving: " + r.size.label, "Movers: " + r.movers + (r.movers !== r.size.movers ? " (the site suggested " + r.size.movers + ")" : "")];
   if (r.size.truck) lines.push("Distance: " + r.dist.label + " (" + r.dist.sub + ")");
   lines.push("Stairs: " + r.stairs.label);
@@ -998,6 +1029,35 @@ function moveLines(r) {
   }
   return lines;
 }
+
+/* ---------- Moving or junk removal ---------- */
+var SERVICE = "moving", junkQuote = null, lastSummary = "";
+function isJunk() { return SERVICE === "junk" && !!junkQuote; }
+function activeLines() { return isJunk() ? MMJunk.requestLines(junkQuote) : moveLines(lastQuote); }
+function updateShared() {
+  var junk = isJunk(), r = junk ? junkQuote : lastQuote;
+  if (!r) return;
+  var price = r.custom ? "Custom price" : money(r.price);
+  $("bf-est-price").textContent = price;
+  $("bf-est-sum").textContent = junk ? "Junk removal · " + MMJunk.summary(r) : "Moving · " + lastSummary;
+  $("bar-price").textContent = price;
+  $("bar-link").setAttribute("href", junk ? "#junk-estimate" : "#estimate");
+  $("bf-service").value = junk ? "Junk removal" : "Moving";
+  $("bf-job-legend").textContent = junk ? "Your pickup" : "Your move";
+  $("bf-date-word").textContent = junk ? "Pickup date" : "Moving date";
+  $("bf-from-word").textContent = junk ? "Pickup address" : "Moving from";
+  $("bf-to-field").hidden = junk;
+}
+function setService(s) {
+  SERVICE = s === "junk" ? "junk" : "moving";
+  $("svc-" + SERVICE).checked = true;
+  $("moving-tool").hidden = SERVICE !== "moving";
+  $("junk-tool").hidden = SERVICE !== "junk";
+  $("quote-h").textContent = SERVICE === "junk" ? "What will junk removal cost?" : "What will my move cost?";
+  try { localStorage.setItem("mm-service", SERVICE); } catch (e) {}
+  updateShared();
+}
+$("svc-switch").addEventListener("change", function (e) { if (e.target.name === "svc") setService(e.target.value); });
 
 $("quote-form").addEventListener("change", function (e) {
   var t = e.target;
@@ -1063,15 +1123,15 @@ $("heavy-plus").addEventListener("click", function () { state.heavy = Math.min(9
   form.addEventListener("change", function (e) { if (tried && e.target.name === "contact_by") validate(); });
 
   function requestText() {
-    var lines = ["Hi Mighty Moose! This is " + val("bf-name") + ". I'd like to book a move."];
+    var lines = ["Hi Mighty Moose! This is " + val("bf-name") + (isJunk() ? ". I'd like to book junk removal." : ". I'd like to book a move.")];
     lines.push("Phone: " + val("bf-phone"));
     if (val("bf-email")) lines.push("Email: " + val("bf-email"));
     lines.push("Best way to reach me: " + contactBy());
     lines.push("Deposit payment: " + depositBy());
     if (whenText()) lines.push("Date: " + whenText());
-    if (val("bf-from")) lines.push("From: " + val("bf-from"));
-    if (val("bf-to")) lines.push("To: " + val("bf-to"));
-    lines = lines.concat(moveLines(lastQuote));
+    if (val("bf-from")) lines.push((isJunk() ? "Pickup address: " : "From: ") + val("bf-from"));
+    if (val("bf-to") && !isJunk()) lines.push("To: " + val("bf-to"));
+    lines = lines.concat(activeLines());
     if (val("bf-notes")) lines.push("Notes: " + val("bf-notes"));
     return lines.join("\n");
   }
@@ -1153,8 +1213,9 @@ $("heavy-plus").addEventListener("click", function () { state.heavy = Math.min(9
     photos.forEach(function (p, i) { fd.append("photo" + (i + 1), p.blob, "photo-" + (i + 1) + ".jpg"); });
     fd.set("move_date", whenText() || "Not given");
     fd.set("date_flexible", $("bf-flex").checked ? "Yes" : "No");
-    fd.set("estimate", moveLines(lastQuote).join("\n"));
-    fd.set("subject", "Moving request: " + val("bf-name") + (val("bf-date") ? ", " + fmtDate(val("bf-date")) : "") + ", " + lastQuote.size.short);
+    if (isJunk()) fd.delete("to");
+    fd.set("estimate", activeLines().join("\n"));
+    fd.set("subject", (isJunk() ? "Junk removal request: " : "Moving request: ") + val("bf-name") + (val("bf-date") ? ", " + fmtDate(val("bf-date")) : "") + ", " + (isJunk() ? junkQuote.load.short : lastQuote.size.short));
     var ctrl = window.AbortController ? new AbortController() : null;
     var timer = setTimeout(function () { if (ctrl) ctrl.abort(); }, 45000);
     return fetch(form.getAttribute("action") || "/", { method: "POST", body: fd, signal: ctrl ? ctrl.signal : undefined })
@@ -1211,14 +1272,26 @@ $("heavy-plus").addEventListener("click", function () { state.heavy = Math.min(9
 (function () {
   var bar = $("price-bar");
   if (!("IntersectionObserver" in window)) return;
-  var formVisible = false, cardVisible = false;
-  function update() { bar.hidden = !(formVisible && !cardVisible); }
-  new IntersectionObserver(function (es) { formVisible = es[0].isIntersecting; update(); }, { threshold: 0 }).observe($("quote-form"));
-  new IntersectionObserver(function (es) { cardVisible = es[0].isIntersecting; update(); }, { threshold: 0.15 }).observe($("estimate"));
+  var vis = {};
+  function update() {
+    var junk = SERVICE === "junk";
+    bar.hidden = !(vis[junk ? "junk-form" : "quote-form"] && !vis[junk ? "junk-estimate" : "estimate"]);
+  }
+  [["quote-form", 0], ["junk-form", 0], ["estimate", 0.15], ["junk-estimate", 0.15]].forEach(function (x) {
+    new IntersectionObserver(function (es) { vis[x[0]] = es[0].isIntersecting; update(); }, { threshold: x[1] }).observe($(x[0]));
+  });
+  $("svc-switch").addEventListener("change", update);
 })();
+
+// Junk removal tool: answers can come from the Junk Removal page's "Book this price" link (?junk=...)
+var params = new URLSearchParams(location.search), linkedJunk = MMJunk.decode(params.get("junk"));
+var startService = linkedJunk ? "junk" : (function () { try { return localStorage.getItem("mm-service"); } catch (e) { return null; } })();
+MMJunk.mount({ prefix: "jk", questions: $("junk-form"), card: $("junk-estimate"), state: linkedJunk || MMJunk.saved() || MMJunk.DEFAULTS,
+  bookHref: function () { return "#book"; }, onChange: function (r) { junkQuote = r; updateShared(); } });
 
 syncInputs();
 render();
+setService(startService);
 </script>
 </body>
 </html>
