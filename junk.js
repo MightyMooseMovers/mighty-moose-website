@@ -1,4 +1,4 @@
-/* Mighty Moose Moving: junk removal price tool.
+/* Mighty Moose Movers: junk removal price tool.
    Same numbers and rules as the Google Sheet "Mighty Moose Moving - Junk Removal & Profit"
    (Settings, Trailers and Load sizes tabs). Change a number there, change it here too. */
 (function () {

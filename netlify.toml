@@ -1,3 +1,11 @@
 # Netlify publishes this folder as-is. There is no build step.
 [build]
   publish = "."
+
+# Send anyone on the old Netlify address to the real domain, so Google only sees one copy of the site.
+# (Deploy previews use a different address and are not affected.)
+[[redirects]]
+  from = "https://inquisitive-ganache-6fdc72.netlify.app/*"
+  to = "https://mightymoosemovers.ca/:splat"
+  status = 301
+  force = true

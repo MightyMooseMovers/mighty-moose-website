@@ -1,6 +1,6 @@
-# Mighty Moose Moving website
+# Mighty Moose Movers website
 
-The website for Mighty Moose Moving, London, Ontario.
+The website for Mighty Moose Movers, London, Ontario.
 
 - `index.html`: the home page, with the free price tool and the booking request form
 - `checklist.html`: the free moving checklist
